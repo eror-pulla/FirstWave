@@ -1,0 +1,22 @@
+<div class="accordion-wraper-container">
+    <div class="wrap-margin-cont">
+      <h3 class="faq-header">Frequently asked questions</h3>
+      <div class="container">
+        <div class="accordion accordion-custom" id="accordionExample">
+          <div class="accordion-item accordion-custom-item" *ngFor="let item of accordionItems; let i = index">
+            <h2 class="accordion-header accordion-custom-header" [id]="'heading' + i">
+              <button class="accordion-button accordion-custom-button" type="button" [attr.data-bs-toggle]="'collapse'" [attr.data-bs-target]="'#collapse' + i" [attr.aria-expanded]="i === 0 ? 'true' : 'false'" [attr.aria-controls]="'collapse' + i">
+                {{ item.title }}
+              </button>
+            </h2>
+            <div [id]="'collapse' + i" class="accordion-collapse collapse accordion-custom-collapse" [ngClass]="{'show': i === 0}" [attr.aria-labelledby]="'heading' + i" data-bs-parent="#accordionExample">
+              <div class="accordion-body accordion-custom-body">
+                {{ item.content }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

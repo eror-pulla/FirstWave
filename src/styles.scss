@@ -1,0 +1,305 @@
+// body{
+// padding: 30px;
+// }
+// fonts
+$manrope_font_200: 'Manrope Extra Light';
+$manrope_font_300: 'Manrope Light';
+$manrope_font_400: 'Manrope Regular';
+$manrope_font_500: 'Manrope Medium';
+$manrope_font_600: 'Manrope SemiBold';
+$manrope_font_700: 'Manrope Bold';
+$manrope_font_800: 'Manrope Extra Bold';
+
+@font-face {
+    font-family:$manrope_font_200;
+    src: url('./assets/fonts/Manrope/Manrope-ExtraLight.ttf');
+    font-weight: 200;
+}
+@font-face {
+    font-family:$manrope_font_300;
+    src: url('./assets/fonts/Manrope/Manrope-Light.ttf');
+    font-weight: 300;
+}
+@font-face {
+    font-family:$manrope_font_400;
+    src: url('./assets/fonts/Manrope/Manrope-Regular.ttf');
+    font-weight: 400;
+}
+@font-face {
+    font-family:$manrope_font_500;
+    src: url('./assets/fonts/Manrope/Manrope-Medium.ttf');
+    font-weight: 500;
+}
+@font-face {
+    font-family:$manrope_font_600;
+    src: url('./assets/fonts/Manrope/Manrope-SemiBold.ttf');
+    font-weight: 600;
+}
+@font-face {
+    font-family:$manrope_font_700;
+    src: url('./assets/fonts/Manrope/Manrope-Bold.ttf');
+    font-weight: 700;
+}
+@font-face {
+    font-family:$manrope_font_800;
+    src: url('./assets/fonts/Manrope/Manrope-ExtraBold.ttf');
+    font-weight: 800;
+}
+
+
+$Poppins_font_100: 'Poppins Thin';
+$Poppins_font_200: 'Poppins Extra Light';
+$Poppins_font_300: 'Poppins Light';
+$Poppins_font_400: 'Poppins Regular';
+// $Poppins_font_500: 'Poppins Medium';
+$Poppins_font_600: 'Poppins SemiBold';
+$Poppins_font_700: 'Poppins Bold';
+$Poppins_font_800: 'Poppins Extra Bold';
+$Poppins_font_900: 'Poppins Black';
+
+@font-face {
+    font-family:$Poppins_font_100;
+    src: url('./assets/fonts/Poppins/Poppins-Thin.ttf');
+    font-weight: 100;
+}
+@font-face {
+    font-family:$Poppins_font_200;
+    src: url('./assets/fonts/Poppins/Poppins-ExtraLight.ttf');
+    font-weight: 200;
+}
+@font-face {
+    font-family:$Poppins_font_300;
+    src: url('./assets/fonts/Poppins/Poppins-Light.ttf');
+    font-weight: 300;
+}
+@font-face {
+    font-family:$Poppins_font_400;
+    src: url('./assets/fonts/Poppins/Poppins-Regular.ttf');
+    font-weight: 400;
+}
+// @font-face {
+//     font-family:$Popins_font_500;
+//     src: url('./assets/fonts/Poppins/Poppins-Medium.ttf');
+//     font-weight: 500;
+// }
+@font-face {
+    font-family:$Poppins_font_600;
+    src: url('./assets/fonts/Poppins/Poppins-SemiBold.ttf');
+    font-weight: 600;
+}
+@font-face {
+    font-family:$Poppins_font_700;
+    src: url('./assets/fonts/Poppins/Poppins-Bold.ttf');
+    font-weight: 700;
+}
+@font-face {
+    font-family:$Poppins_font_900;
+    src: url('./assets/fonts/Poppins/Poppins-Black.ttf');
+    font-weight: 800;
+}
+
+// colors
+$primary_color: #0070F0;
+$primary_color_10_percent:rgba(0, 112, 240, 0.1);
+$secondary_color_1:#1F384F;
+$secondary_color_2:#2EC5CE;
+$accent_1:#3CBA79;
+$accent_2:#EC5252;
+$accent_3:#B7C5CC;
+$accent_4: #DBDBDB;
+$label_col_primary: #1F284F;
+$label_col_secondary: #515458;
+$bg_primary: #E1E8F0;
+$bg_secondary: #f0f5fb;
+$bg_trenary: #FAFBFC;
+$stock_1:#B7BFC7;
+$white_color:#fff;
+$black_color: #17181A;
+$gray_color:#575757;
+$bg_fourth:linear-gradient(90deg, rgba(245,245,245,1) 100%, rgba(239,246,254,1) 100%, rgba(237,250,245,1) 100%);
+$bg_gray_color:linear-gradient(141.34deg, #F5F0FF 0%, #EFF6FE 50.36%, #EDFAF5 100%);
+
+
+//button classes
+.green-btn{
+    padding: 12px 24px;
+    font-family: 'Poppins SemiBold', sans-serif;
+    color:  $white_color;
+    background-color: $accent_1;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    transition: all ease .3s;
+} 
+.green-btn:hover{
+    color: $accent_1;
+    border: 1px solid $accent_1;
+    background-color:  $white_color;
+}
+.blue-btn{
+    padding: 12px 24px;
+    font-family: 'Poppins SemiBold', sans-serif;
+    color:  #fff;
+    background-color: $primary_color;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    transition: all ease .3s;
+} 
+.blue-btn:hover{
+    color: $primary_color;
+    border: 1px solid $primary_color;
+    background-color:  $white_color;
+}
+.white-bg-btn{
+    padding: 12px 24px;
+    font-family: 'Poppins SemiBold', sans-serif;
+    color:  $label_col_primary;
+    background-color: $bg_trenary;
+    border: 1px solid $stock_1;
+    border-radius: 30px;
+}
+//radio-btn
+.radio-btn{
+    width: 20px;
+    height: 20px;
+}
+.label-radio{
+    color: $gray_color;
+}
+.active-label-radio{
+    color: $black_color;
+}
+.box-wrap-radio{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+//labels and inputs
+.label-form-input{
+    display: flex;
+    font-family: 'Poppins Regular', sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    padding-bottom: 4px;
+    color: $label_col_secondary;
+}
+.input-form{
+    color: $label_col_secondary;
+    border:1px solid $stock_1;
+    border-radius: 8px;
+    padding: 8px 0px 8px 12px;
+}
+//checkbox 
+.checkbox-wrap{
+    display: flex;
+    align-items: center;
+    gap: 17px;
+}
+.checkbox {
+    overflow: hidden;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    --background: #fff;
+    --border: #D1D6EE;
+    --border-hover: #BBC1E1;
+    --border-active: #0070F0;
+    --tick: #fff;
+    position: relative;
+    input,
+    svg {
+        width: 21px;
+        height: 21px;
+        display: block;
+    }
+    input {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        position: relative;
+        outline: none;
+        background: var(--background);
+        border: none;
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: box-shadow .3s;
+        box-shadow: inset 0 0 0 var(--s, 1px) var(--b, var(--border));
+        &:hover {
+            --s: 2px;
+            --b: var(--border-hover);
+        }
+        &:checked {
+            --b: var(--border-active);
+        }
+    }
+    svg {
+        pointer-events: none;
+        fill: none;
+        stroke-width: 2px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke: var(--stroke, var(--border-active));
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 21px;
+        height: 24px;
+        transform: scale(var(--scale, 1)) translateZ(0);
+    }
+    &.path {
+        input {
+            &:checked {
+                --s: 2px;
+                transition-delay: .4s;
+                & + svg {
+                    --a: 16.1 86.12;
+                    --o: 102.22;
+                }
+            }
+        }
+        svg {
+            stroke-dasharray: var(--a, 86.12);
+            stroke-dashoffset: var(--o, 86.12);
+            transition: stroke-dasharray .6s, stroke-dashoffset .6s;
+        }
+    }
+    &.bounce {
+        --stroke: var(--tick);
+        input {
+            &:checked {
+                
+                --s: 11px;
+                & + svg {
+                    animation: bounce .4s linear forwards .2s;
+                }
+            }
+        }
+        svg {
+            --scale: 0;
+        }
+    }
+}
+@keyframes bounce {
+    50% {
+        transform: scale(1.2);
+    }
+    75% {
+        transform: scale(.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.span-label-check{
+    color: $gray_color; 
+}
+.span-label-check-avtive{
+    color: $black_color;
+}
+// active links 
+.active-link{
+    color: $primary_color !important;
+    border-bottom: 1px solid $primary_color;
+    padding-bottom: 2px;
+}

@@ -1,0 +1,48 @@
+@import "../../../styles.scss";
+
+.accordion-wraper-container{
+    padding: 96px 0;
+    background:$bg_fourth;
+    .wrap-margin-cont{
+        max-width: 50%;
+        margin: 0 auto;
+        .faq-header{
+            text-align: center;
+            font-family: 'Poppins Bold ', sans-serif;
+            color: $label_col_primary;
+            font-size: 40px;
+            line-height: 48px;
+            font-weight: 800;
+            margin-bottom: 64px;
+        }
+    }
+}
+.accordion-item{
+    color: none !important;
+    background-color: none !important;
+    border: none !important;
+    border-bottom: 1px solid $bg_primary !important;
+}
+.accordion-header{
+    font-family: 'Poppins SemiBold', sans-serif;
+}
+.accordion{
+    background: $bg_fourth !important;
+}
+.accordion-button:not(.collapsed){
+    background: $bg_fourth !important;
+}.accordion-button{
+    background: $bg_fourth !important;
+    font-size: 20px;
+    line-height: 26px;
+    color: $black_color;
+}
+.accordion-button:focus{
+border: none !important;
+box-shadow: none !important;
+}
+.accordion-body{
+    background: $bg_fourth !important;
+    font-family: 'Poppins Regular', sans-serif;
+    font-size: 15px;
+}
