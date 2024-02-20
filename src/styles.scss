@@ -170,7 +170,7 @@ $bg_gray_color:linear-gradient(141.34deg, #F5F0FF 0%, #EFF6FE 50.36%, #EDFAF5 10
 }
 .box-wrap-radio{
     display: flex;
-    gap: 8px;
+    gap: 16px;
     align-items: center;
 }
 //labels and inputs
@@ -194,89 +194,94 @@ $bg_gray_color:linear-gradient(141.34deg, #F5F0FF 0%, #EFF6FE 50.36%, #EDFAF5 10
     align-items: center;
     gap: 17px;
 }
+
+$secondary-color: #2ecc71;
+$background: #fff;
+$border: #D1D6EE;
+$border-hover: #BBC1E1;
+$border-active: #0070F0;
+$tick: #fff;
 .checkbox {
     overflow: hidden;
     display: flex;
     gap: 8px;
     align-items: center;
-    --background: #fff;
-    --border: #D1D6EE;
-    --border-hover: #BBC1E1;
-    --border-active: #0070F0;
-    --tick: #fff;
     position: relative;
+
     input,
     svg {
         width: 21px;
         height: 21px;
         display: block;
     }
+
     input {
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
         position: relative;
         outline: none;
-        background: var(--background);
+        background: $background;
         border: none;
         margin: 0;
         padding: 0;
         cursor: pointer;
         border-radius: 4px;
         transition: box-shadow .3s;
-        box-shadow: inset 0 0 0 var(--s, 1px) var(--b, var(--border));
+        box-shadow: inset 0 0 0 1px $border; // Using $border directly
+
         &:hover {
-            --s: 2px;
-            --b: var(--border-hover);
+            box-shadow: inset 0 0 0 2px $border-hover; // Using $border-hover directly
         }
+
         &:checked {
-            --b: var(--border-active);
+            box-shadow: inset 0 0 0 1px $border-active; // Using $border-active directly
         }
     }
+
     svg {
         pointer-events: none;
         fill: none;
         stroke-width: 2px;
         stroke-linecap: round;
         stroke-linejoin: round;
-        stroke: var(--stroke, var(--border-active));
+        stroke: $border-active;
         position: absolute;
         top: 0;
         left: 0;
         width: 21px;
         height: 24px;
-        transform: scale(var(--scale, 1)) translateZ(0);
+        transform: scale(1) translateZ(0); // Removed use of var() for scale
     }
+
     &.path {
         input {
             &:checked {
-                --s: 2px;
+                box-shadow: inset 0 0 0 2px $border-active; // Using $border-active directly
                 transition-delay: .4s;
+
                 & + svg {
-                    --a: 16.1 86.12;
-                    --o: 102.22;
+                    stroke-dasharray: 16.1 86.12;
+                    stroke-dashoffset: 102.22;
                 }
             }
         }
+
         svg {
-            stroke-dasharray: var(--a, 86.12);
-            stroke-dashoffset: var(--o, 86.12);
             transition: stroke-dasharray .6s, stroke-dashoffset .6s;
         }
     }
+
     &.bounce {
-        --stroke: var(--tick);
         input {
             &:checked {
-                
-                --s: 11px;
+                box-shadow: inset 0 0 0 11px $tick; // Using $tick directly
+
                 & + svg {
                     animation: bounce .4s linear forwards .2s;
+                    transform: scale(0); // Removed use of var() for scale
                 }
             }
-        }
-        svg {
-            --scale: 0;
         }
     }
 }
@@ -291,6 +296,7 @@ $bg_gray_color:linear-gradient(141.34deg, #F5F0FF 0%, #EFF6FE 50.36%, #EDFAF5 10
         transform: scale(1);
     }
 }
+
 .span-label-check{
     color: $gray_color; 
 }

@@ -1,0 +1,64 @@
+@import "../../../../styles.scss";
+
+.wraper-banner{
+    .container{
+        .inside-container-wrap{
+            padding-top: 99px;
+            padding-bottom: 79px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .col-6{
+                .text-banner{
+                    h4{
+                        font-family: 'Poppins Bold', sans-serif;
+                        font-weight: 700;
+                        font-size: 50px;
+                        line-height: 60px;
+                        color: $label_col_primary;
+                    }
+                    p{
+                        max-width: 85%;
+                        margin-top: 16px;
+                        margin-bottom: 16px;
+                        color: $gray_color;
+                        font-size: 20px;
+                        line-height: 32px;
+                    }
+                    .bold-p{
+                        color: $label_col_primary;
+                        font-size: 20px;
+                        line-height: 32px;
+                    }
+                    .box-wrap-radio{
+                        margin-bottom: 16px;
+                        .radio-1{
+                            display: flex;
+                            gap: 8px;
+                            align-items: center;
+                            .radio-btn{
+    
+                            }
+                            .label-radio{
+                                font-family: 'Poppins Regular', sans-serif;
+                                font-weight: 400;
+                                font-size: 16px;
+                                line-height: 24px;
+                            }
+                        }
+                    }
+                }
+            }
+            .col-6{
+                align-items: center;
+                justify-content: center;
+                display: flex;
+                .img-wraper-banner{
+                    .img-banner{
+
+                    }
+                }
+            }
+        }
+    }
+}
