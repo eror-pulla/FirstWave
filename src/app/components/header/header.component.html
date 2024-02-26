@@ -10,9 +10,13 @@
           <li><a routerLinkActive="active-link" routerLink="/blog">Blog</a></li>
         </ul>
         <div class="wrap-btn-nav">
-          <button class="green-btn">Book a Demo</button>
+          <button class="green-btn" (click)="openModal()">Book a Demo</button>
         </div>
       </div>
     </div>
   </nav>
-  
+  <app-modal  [isOpen]="modalOpen"
+  (closeModal)="modalOpen = false"
+  (demoChange)="onDemoChange($event)" 
+  [selectedDemo]="selectedDemo" 
+  [demoArr]="demoArr"></app-modal>

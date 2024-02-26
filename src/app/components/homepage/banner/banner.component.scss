@@ -1,13 +1,61 @@
 @import "../../../../styles.scss";
 
 .wraper-banner{
+    height: calc(100vh - 96px);
+    position: relative;
+    background-color: $bg_trenary;
+    &::before{
+        content: "";
+        top: 6px;
+        left: 0px;
+        width: 24px;
+        height: 48px;
+        position: absolute;
+        background-image: url(../../../../assets/imgs/medium-circle.png);
+        background-size: contain; 
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 1;
+        z-index: 1;
+    }
+    &::after{
+        content: "";
+        bottom: 0;
+        left: 0;
+        width: 83px;
+        height: 186px;
+        position: absolute;
+        background-image: url(../../../../assets/imgs/big-circle.png);
+        background-size: contain; 
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 1;
+        z-index: 1;
+    }
     .container{
+        height: 100%;
+        display: flex;
+        align-items: center;
         .inside-container-wrap{
-            padding-top: 99px;
-            padding-bottom: 79px;
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
+            &::after{
+                content: "";
+                bottom: 7.5%;
+                right: 50%;
+                width: 32px;
+                height: 32px;
+                position: absolute;
+                background-image: url(../../../../assets/imgs/small-circle.png);
+                background-size: contain; 
+                background-repeat: no-repeat;
+                background-position: center;
+                opacity: 1;
+                z-index: 1;
+            }
             .col-6{
                 .text-banner{
                     h4{
@@ -54,8 +102,36 @@
                 justify-content: center;
                 display: flex;
                 .img-wraper-banner{
+                    position: relative;
+                    &::before{
+                        content: "";
+                        bottom: 30px;
+                        left: 15px;
+                        width: 170px;
+                        height: 168px;
+                        position: absolute;
+                        background-image: url(../../../../assets/imgs/lines.svg);
+                        background-size: cover; 
+                        background-position: center;
+                        opacity: 1;
+                        z-index: 1;
+                    }
+                    &::after {
+                        content: "";
+                        top: 0;
+                        right: 90px;
+                        width: 60px;
+                        height: 120px;
+                        background-image: url(../../../../assets/imgs/Dots.svg);
+                        position: absolute;
+                        background-size: cover; 
+                        background-position: center;
+                        opacity: 1;
+                        z-index: 1;
+                    }
                     .img-banner{
-
+                        position: relative;
+                        z-index: 2;
                     }
                 }
             }

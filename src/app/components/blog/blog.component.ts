@@ -11,5 +11,10 @@ export class BlogComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  modalOpen: boolean = false;
+  
+  openModal() {
+    this.modalOpen = true;
+  }
 
 }

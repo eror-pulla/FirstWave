@@ -6,16 +6,17 @@
                     <h4>Maximize Your IT Investment</h4>
                     <p>We will help you to audit, manage, automate and secure your entire business. <b class="bold-p">Schedule a demo with our specialists.</b></p>
                     <div class="box-wrap-radio">
-                        <div class="radio-1">
-                            <input type="radio" id="option1" name="options" value="option1" class="radio-btn">
-                            <label for="option1" class="label-radio">Option 1</label>
+                        <div class="radio-1" *ngFor="let demo of demoArr">
+                          <input type="radio" id="{{demo.value}}" 
+                          name="options" [value]="demo.value" 
+                          class="radio-btn" [(ngModel)]="selectedDemo" 
+                          (click)="updateChecked(demo.value)">
+                          <label for="{{demo.value}}" class="label-radio">{{demo.label}}</label>
                         </div>
-                        <div class="radio-1">
-                            <input type="radio" id="option2" name="options" value="option1" class="radio-btn">
-                            <label for="option2" class="label-radio">Option 2</label>
-                        </div>
-                    </div>
-                    <button class="blue-btn">Book a Demo</button>
+                      </div>
+                      <button 
+                      [ngClass]="selectedDemo === 'Cybersecurity' ? 'blue-btn' : 'green-btn'"
+                       (click)="openModal()" >Book {{selectedDemo}} a Demo</button>    
                 </div>
             </div>
             <div class="col-6">
@@ -25,4 +26,10 @@
             </div>
         </div>
     </div>
+    <app-modal [isOpen]="modalOpen"
+    (closeModal)="modalOpen = false"
+    (demoChange)="onDemoChange($event)" 
+    [selectedDemo]="selectedDemo" 
+    [demoArr]="demoArr" ></app-modal>
+
 </div>

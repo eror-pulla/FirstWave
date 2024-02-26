@@ -1,0 +1,93 @@
+<div class="modal" *ngIf="isOpen">
+    <div class="modal-content"*ngIf="!submittedData">
+      <span class="close" (click)="onCloseModal()">&times;</span>
+        <form class="form-wraper" [formGroup]="form" #myFormRef="ngForm">
+            <div class="form-group">
+                <div class="wrap">
+                    <label class="label-form-input" for="name">Name:</label>
+                    <input type="text" name="name" placeholder="enter your name" class="input-form"
+                    formControlName="name">
+                    <div *ngIf="name?.touched && name?.invalid" class="alert alert-danger">Name is required.</div>
+                </div>
+                <div class="wrap">
+                    <label class="label-form-input" for="name">Surname:</label>
+                    <input type="text" name="surname" placeholder="enter your surname" class="input-form" 
+                    formControlName="surname">
+                    <div *ngIf="surname?.touched && surname?.invalid" class="alert alert-danger">Surname is required.</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="wrap">
+                    <label class="label-form-input" for="name">Email:</label>
+                    <input type="text" name="email" placeholder="enter your email" class="input-form" 
+                    formControlName="email">
+                    <div *ngIf="email?.touched && email?.invalid" class="alert alert-danger">Email is required.</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="wrap">
+                    <label class="label-form-input" for="name">Contact number:</label>
+                    <input type="text" name="number" placeholder="enter your number" class="input-form" 
+                    formControlName="number">
+                    <div *ngIf="number?.touched && number?.invalid" class="alert alert-danger">Number is required.</div>
+                </div>
+                <div class="wrap">
+                    <label class="label-form-input" for="name">Your device Count:</label>
+                    <input type="text" name="device" placeholder="select" class="input-form" 
+                    formControlName="device">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="wrap">
+                    <label class="label-form-input" for="name">Your Country:</label>
+                    <input type="text" name="country" placeholder="enter your country" class="input-form" 
+                    formControlName="country">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="wrap">
+                    <label class="label-form-input" for="name">Your current Challange:</label>
+                    <textarea name="message" class="input-form-area" placeholder="enter your message" 
+                    formControlName="message"></textarea>
+                </div>
+            </div>
+        </form>
+        <div class="check-interest">
+            <h5>What are you more interested in:</h5>
+            <div class="checkbox-wrap-out">
+                <div class="checkbox-wrap" *ngFor="let demo of demoArr">
+                    <label for="{{demo.value}}" class="checkbox bounce" (click)="updateChecked(demo.value)">
+                      <input type="checkbox" 
+                      id="{{demo.value}}" 
+                      [(ngModel)]="demo.checked" 
+                      [value]="demo.value">
+                      <svg viewBox="0 0 21 21">
+                          <polyline points="5 10.75 8.5 14.25 16 6"></polyline>
+                      </svg>
+                      <span class="span-label-check">{{demo.label}}</span>
+                  </label>
+                  </div>
+            </div>
+        </div>
+        <div class="wrap-btn">
+            <button 
+            (click)="onSubmit(); showToast();"
+            type="button"
+            [ngClass]="selectedDemo === 'Cybersecurity' ? 'blue-btn' : 'green-btn'"
+            >Book {{selectedDemo}} a Demo</button>    
+        </div>
+    </div>
+    <div class="modal-content" *ngIf="submittedData">
+        <span class="close" (click)="onCloseModal()">&times;</span>
+        <h2 class="title-sumbited">Submitted Demo:</h2>
+        <p class="data-submited">Name: {{ submittedData.name }}</p>
+        <p class="data-submited">Surname: {{ submittedData.surname }}</p>
+        <p class="data-submited">Email: {{ submittedData.email }}</p>
+        <p class="data-submited">Number: {{ submittedData.number }}</p>
+        <p class="data-submited">Country: {{ submittedData.country }}</p>
+        <p class="data-submited">Message: {{ submittedData.message }}</p>
+    </div>
+      <div *ngIf="submittedData" class="toast" [class.show]="showingToast">
+    Your {{selectedDemo}} demo has been submited.
+    </div>
+  </div>
