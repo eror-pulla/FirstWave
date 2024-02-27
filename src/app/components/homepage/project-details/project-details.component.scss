@@ -1,0 +1,79 @@
+@import "../../../../styles.scss";
+.wrap-project-details{
+    padding-top: 60px;
+    padding-bottom: 65px;
+    // height: 100vh;
+    background:$bg_fourth;
+    .container{
+        .wraper-project{
+
+            .title-project{
+                h5{
+                    font-family: $Poppins_font_400;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 18px;
+                    color: $primary_color;
+                    opacity: 90%;
+                }
+                h3{
+                    margin-top: 16px;
+                    font-family: $Poppins_font_700;
+                    font-weight: 700;
+                    font-size: 40px;
+                    line-height: 48px;
+                    color: $label_col_primary;
+                }
+            }
+            .buttons-wrap-project{
+                margin-top: 24px;
+                display: flex;
+                align-items: center;
+                gap:24px;
+            }
+            .paragraph-project{
+                margin-top: 32px;
+                
+                h4{
+                    font-family: $Poppins_font_600;
+                    font-weight: 500;
+                    font-size: 24px;
+                    line-height: 36px;
+                    color: $black_color;
+                    margin-bottom: 24px;
+                }
+                p{
+                    font-family: $Poppins_font_400;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 32px;
+                    color: $gray_color;
+                }
+            }
+            .wrap-cards{
+                margin-top: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .card{
+                    border-radius: 16px;
+                    padding: 40px;
+                    max-width: 30%;
+                    min-height: 275px;
+                    img{
+                        height: 40px;
+                        width: 40px;
+                    }
+                    p{
+                        margin-top: 24px;
+                        font-family: $Poppins_font_400;
+                        font-weight: 400;
+                        font-size: 18px;
+                        line-height: 28px;
+                        color: $black_color;
+                    }
+                }
+            }
+        }
+    }
+}

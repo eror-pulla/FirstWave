@@ -1,1 +1,26 @@
-<p>project-details works!</p>
+<div class="wrap-project-details">
+    <div class="container">
+        <div class="wraper-project">
+            <div class="title-project">
+                <h5>Fraction of a cost</h5>
+                <h3>Premium Network Management</h3>
+            </div>
+            <div class="buttons-wrap-project">
+                <button [ngClass]="activeButton === 1 ? 'blue-btn' : 'white-bg-btn'" (click)="setActiveButton(1)" >Service Providers</button>
+                <button [ngClass]="activeButton === 2 ? 'blue-btn' : 'white-bg-btn'" (click)="setActiveButton(2)" >MSP</button>
+                <button [ngClass]="activeButton === 3 ? 'blue-btn' : 'white-bg-btn'" (click)="setActiveButton(3)" >Enterprise</button>
+                <button [ngClass]="activeButton === 4 ? 'blue-btn' : 'white-bg-btn'" (click)="setActiveButton(4)" >SMB</button>
+            </div>
+            <div class="paragraph-project">
+                <h4>{{ paragraphContent[activeButton].title }}</h4>
+                <p>{{ paragraphContent[activeButton].content  }}</p>
+            </div>
+            <div class="wrap-cards">
+                <div class="card" *ngFor="let card of cardContent[activeButton].cards">
+                  <img [src]="card.image" alt="">
+                  <p>{{ card.text }}</p>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
