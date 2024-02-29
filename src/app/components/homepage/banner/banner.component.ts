@@ -35,9 +35,6 @@ export class BannerComponent implements OnInit {
     this.selectedDemo = event;
   }
 
-  // onRadioChange(event: any) {
-  //   this.selectedDemo = event.target.value;
-  // }
   modalOpen: boolean = false;
   
   openModal() {

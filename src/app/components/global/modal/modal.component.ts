@@ -17,34 +17,6 @@ export class ModalComponent {
   
   constructor(private cdr: ChangeDetectorRef) {}
 
-  changeDemo(demo: any) {
-    this.demoChange.emit(demo);
-  }
-  onCloseModal() {
-    this.isOpen = false;
-    this.closeModal.emit();
-  }
-  @HostListener('document:keydown.escape', ['$event']) 
-  handleEscapeKey(event: KeyboardEvent) {
-    if (this.isOpen) {
-      this.onCloseModal();
-    }
-  }
-  updateChecked(selectedDemo: any) {
-    this.demoArr.forEach(demo => {
-        demo.checked = (demo.value === selectedDemo);
-    });
-    // Update button class based on the selected checkbox
-    this.updateButtonClass();
-    // Trigger change detection manually
-    this.cdr.detectChanges();
-  }
-  updateButtonClass() {
-    const selectedDemoObj = this.demoArr.find(demo => demo.checked);
-    if (selectedDemoObj) {
-      this.selectedDemo = selectedDemoObj.value;
-    }
-  }
   form= new FormGroup({
     name: new FormControl('', Validators.required),
     surname: new FormControl('', Validators.required),
@@ -69,6 +41,38 @@ export class ModalComponent {
   get country(){
     return this.form.get('country');
   }
+  @HostListener('document:keydown.escape', ['$event']) 
+  handleEscapeKey(event: KeyboardEvent) {
+    if (this.isOpen) {
+      this.onCloseModal();
+    }
+  }
+  
+  changeDemo(demo: any) {
+    this.demoChange.emit(demo);
+  }
+  onCloseModal() {
+    this.isOpen = false;
+    this.closeModal.emit();
+  }
+  updateChecked(selectedDemo: any) {
+    this.demoArr.forEach(demo => {
+        demo.checked = (demo.value === selectedDemo);
+    });
+    // Update button class based on the selected checkbox
+    this.updateButtonClass();
+    // Trigger change detection manually
+    this.cdr.detectChanges();
+  }
+  updateButtonClass() {
+    const selectedDemoObj = this.demoArr.find(demo => demo.checked);
+    if (selectedDemoObj) {
+      this.selectedDemo = selectedDemoObj.value;
+    }
+  }
+
+
+  
   submittedData: any;
   onSubmit() {
     if (this.form.valid) {
@@ -85,7 +89,7 @@ showToast() {
   this.showingToast = true;
   setTimeout(() => {
     this.showingToast = false;
-  }, 3000); // Hide the toast after 3 seconds
+  }, 4000); // Hide the toast after 3 seconds
 }
 
 

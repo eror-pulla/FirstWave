@@ -1,1 +1,31 @@
-<p>advert works!</p>
+<div class="wraper-ad">
+    <div class="container">
+        <h4>Need Help Making a Decision?</h4>
+        <button class="green-btn" (click)="openModal()" >Book a Demo</button>
+        <div class="wraper-ticks">
+            <div class="tick-inside">
+                <div class="img-tick">
+                    <img src="../../../../assets/imgs/check-circle.svg" alt="">
+                </div>
+                <p>See the changes you can make by using automated features that matters to you</p>
+            </div>
+            <div class="tick-inside">
+                <div class="img-tick">                    
+                    <img src="../../../../assets/imgs/check-circle.svg" alt="">
+                </div>
+                <p>Learn how FirstWave technology can be customised for your business needs</p>
+            </div>
+            <div class="tick-inside">
+                <div class="img-tick">
+                    <img src="../../../../assets/imgs/check-circle.svg" alt="">
+                </div>
+                <p>Get Top notch support from our cybersecurity & infrastructure management experts</p>
+            </div>
+        </div>
+    </div>
+    <app-modal  [isOpen]="modalOpen"
+(closeModal)="modalOpen = false"
+(demoChange)="onDemoChange($event)" 
+[selectedDemo]="selectedDemo" 
+[demoArr]="demoArr"></app-modal>
+</div>

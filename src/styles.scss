@@ -1,4 +1,7 @@
-
+// @import "~swiper/swiper-bundle.min.css";
+// @import 'swiper/scss';
+// @import 'swiper/scss/navigation';
+// @import 'swiper/scss/pagination';
 // fonts
 $manrope_font_200: 'Manrope Extra Light';
 $manrope_font_300: 'Manrope Light';
@@ -97,6 +100,7 @@ $Poppins_font_900: 'Poppins Black';
 }
 
 // colors
+$white:#FFFFFF;
 $primary_color: #0070F0;
 $primary_color_10_percent:rgba(0, 112, 240, 0.1);
 $secondary_color_1:#1F384F;
@@ -116,7 +120,7 @@ $black_color: #17181A;
 $gray_color:#575757;
 $bg_fourth:linear-gradient(90deg, rgba(245,245,245,1) 100%, rgba(239,246,254,1) 100%, rgba(237,250,245,1) 100%);
 $bg_gray_color:linear-gradient(141.34deg, #F5F0FF 0%, #EFF6FE 50.36%, #EDFAF5 100%);
-
+$icon-bg:#F4F5F7;
 
 //button classes
 .green-btn{

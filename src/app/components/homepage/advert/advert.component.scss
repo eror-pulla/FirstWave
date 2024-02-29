@@ -1,0 +1,43 @@
+@import "../../../../styles.scss";
+
+.wraper-ad{
+    .container{
+        background-color: $secondary_color_1;
+        border-radius: 16px;
+        padding: 80px 85px;
+        text-align: center;
+        h4{
+            color: $white;
+            font-family: $Poppins_font_700;
+            font-size: 40px;
+            line-height: 48px;
+            margin-bottom: 40px;
+        }
+        .wraper-ticks{
+            margin-top: 44px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            .tick-inside{
+                max-width: 30%;
+                display: flex;
+                align-items: baseline;
+                gap: 12px;
+                .img-tick{
+                    
+                    img{
+
+                    }
+                }
+                p{
+                    text-align: start;
+                    margin: 0;
+                    color: $white;
+                    font-family: $Poppins_font_400;
+                    font-size: 14px;
+                    line-height: 24px;
+                }
+            }
+        }
+    }
+}

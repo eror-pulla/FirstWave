@@ -1,0 +1,167 @@
+@import "../../../../styles.scss";
+
+.wraper-services{
+    height: 100vh;
+    .container
+    {
+        margin-top: 96px;
+        .row{
+            position: relative;
+            margin-bottom: 100px;
+            .col-6{
+                display: flex;
+                justify-content: center;
+                &::before{
+                    content: "";
+                    width: 70px;
+                    height: 70px;
+                    top: 25%;
+                    left: -4%;
+                    position: absolute;
+                    background-image: url(../../../../assets/imgs/Rectangle52.svg);
+                    background-size: contain; 
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    opacity: 1;
+                    z-index: 1;
+                }
+                &::after{
+                    content: "";
+                    width: 70px;
+                    height: 76px;
+                    bottom: -8%;
+                    left: 2%;
+                    position: absolute;
+                    background-image: url(../../../../assets/imgs/Rectangle53.svg);
+                    background-size: contain; 
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    opacity: 1;
+                    z-index: 1;
+                }
+                .img-wraper-services{
+                    position: relative;
+                    &::before{
+                        content: "";
+                        width: 442px;
+                        height: 456px;
+                        top: 25%;
+                        left: -10%;
+                        position: absolute;
+                        background-image: url(../../../../assets/imgs/Rectangle51.svg);
+                        background-size: contain; 
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        opacity: 1;
+                        z-index: 1;
+                    }
+                    img{
+                        position: relative;
+                        z-index: 2;
+                    }
+                }
+            }
+            .text-col{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                .wraper-text-services{
+                    h6{
+                        font-family: $Poppins_font_400;
+                        font-weight: 500;
+                        color: $primary_color;
+                        opacity: 90%;
+                        font-size: 14px;
+                        line-height: 18px;
+                        text-transform: capitalize;
+                    }
+                    h3{
+                        font-family: $Poppins_font_700;
+                        font-weight: 700;
+                        font-size: 40px;
+                        line-height: 48px;
+                        color: $label_col_primary;
+                    }
+                    p{
+                        color: $gray_color;
+                        font-family:$Poppins_font_400;
+                        font-size: 20px;
+                        line-height: 32px;
+                        .inside-bold{
+                            font-family:$Poppins_font_600;
+                            font-size: 20px;
+                            line-height: 32px;
+                            color: $label_col_primary;
+                        }
+                    }
+                    .icon-wrap{
+                        display: flex;
+                        align-items: center;
+                        gap: 28px;
+                        margin-bottom: 16px;
+                        .img-inside-wrap{
+
+                        }
+                        .text-inside-content{
+
+                            h6{
+                                font-family:$Poppins_font_400;
+                                font-size: 20px;
+                                line-height: 30px;
+                                color: $black_color;
+                            }
+                            p{
+                                font-family:$Poppins_font_400;
+                                font-size: 16px;
+                                line-height: 26px;
+                                color: $gray_color;
+                                margin: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .row-grid{
+            .grid-wrap{
+                display: grid;
+                grid-template-rows: auto auto; /* Two rows with automatic height */
+                grid-template-columns: auto auto; /* Two columns with automatic width */
+                gap: 42px;
+                .service-wrap{
+                    display: flex;
+                    align-items: center;
+                    gap: 35px;
+                    .img-service-inside{
+                        background-color: $icon-bg;
+                        width: 72px;
+                        height: 64px;
+                        border-radius: 100px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;                    
+                        img{
+
+                        }
+                    }
+                    .content-grid{
+
+                        h5{
+                            font-family:$Poppins_font_600;
+                            font-size: 24px;
+                            line-height: 32px;
+                            color: $label_col_primary;
+                        }
+                        p{
+                            font-family:$Poppins_font_400;
+                            font-size: 16px;
+                            line-height: 26px;
+                            color: $gray_color;
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -42,7 +42,8 @@ import { ModalComponent } from './components/global/modal/modal.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    // SwiperModule
 
   ],
   providers: [],
