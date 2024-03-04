@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -16,9 +17,18 @@ import { BannerComponent } from './components/homepage/banner/banner.component';
 import { ProjectDetailsComponent } from './components/homepage/project-details/project-details.component';
 import { ServicesComponent } from './components/homepage/services/services.component';
 import { AdvertComponent } from './components/homepage/advert/advert.component';
-import { TestimonialComponent } from './components/homepage/testimonial/testimonial.component';
 import { ModalComponent } from './components/global/modal/modal.component';
+import { TestimonialComponent } from './components/homepage/testimonial/testimonial.component';
 
+import { SwiperModule } from 'ngx-swiper-wrapper';
+import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
+import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
+import { BlogBannerComponent } from './components/blog/blog-banner/blog-banner.component';
+
+const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
+  direction: 'horizontal',
+  slidesPerView: 'auto'
+};
 
 @NgModule({
   declarations: [
@@ -35,18 +45,22 @@ import { ModalComponent } from './components/global/modal/modal.component';
     ProjectDetailsComponent,
     ServicesComponent,
     AdvertComponent,
+    ModalComponent,
     TestimonialComponent,
-    ModalComponent
+    BlogBannerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    // SwiperModule
+    SwiperModule
 
   ],
-  providers: [],
+  providers: [{
+    provide: SWIPER_CONFIG,
+    useValue: DEFAULT_SWIPER_CONFIG
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

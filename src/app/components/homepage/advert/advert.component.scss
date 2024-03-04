@@ -1,6 +1,9 @@
 @import "../../../../styles.scss";
 
 .wraper-ad{
+    background: $bg_fourth;
+    padding-bottom: 30px;
+    padding-top: 40px;
     .container{
         background-color: $secondary_color_1;
         border-radius: 16px;

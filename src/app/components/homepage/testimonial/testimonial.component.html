@@ -1,18 +1,106 @@
-<!-- <div >
-    <swiper class="mySwiper"
-        [direction]="'horizontal'"
-        [slidesPerView]="1"
-        [mousewheel]="false"
-        [allowTouchMove]="true"
-        [speed]="700"
-        [navigation]="true"
-    >
-        <ng-template>
-            <div class="image" style="width: 100%; height: 100%;">
-                <img style="width: 100%; height: 100%; object-fit: cover;" src="" alt="">
-                <p>asasas</p>
+
+<div class="conatiner-wraper-slider">
+    <div class="container">
+        <div class="title-wraper">
+            <div class="inside-title-wrap">
+                <h4>Real Stories from</h4>
+                <h4>Real Customers</h4>
+                <p>Get inspired by these stories.</p>
             </div>
-        </ng-template>
-        
-    </swiper>
-</div> -->
+        </div>
+        <swiper
+        class="swiper"
+        [config]="config"
+        (slideChange)="onSlideChange()"
+        > 
+        <div class="slides">
+            <div class="card-1-testimonial ">
+                <img src="../../../../assets/imgs/hubspot.svg" alt="">
+                <p>To quickly start my startup landing page design, I was looking for a landing page UI Kit. 
+                    Landify is one of the best landing page UI kit I have come across. 
+                    It’s so flexible, well organised and easily editable.</p>
+                <div class="profile-wrap">
+                    <div class="img-profile">
+                        <img src="../../../../assets/imgs/profile_1.svg" alt="">
+                    </div>
+                    <div class="name-profile">
+                        <h6>Floyd Miles</h6>
+                        <p>Vice President, GoPro</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-2-testimonial ">
+                <img src="../../../../assets/imgs/airbnb.svg" alt="">
+                <p>I used landify and created a landing page for my startup within a week.
+                    The Landify UI Kit is simple and highly intuitive, so anyone can use it.</p>
+                <div class="profile-wrap">
+                    <div class="img-profile">
+                        <img src="../../../../assets/imgs/profile_3.svg" alt="">
+                    </div>
+                    <div class="name-profile">
+                        <h6>Jane Cooper</h6>
+                        <p>CEO, Airbnb</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-3-testimonial ">
+                <img src="../../../../assets/imgs/BookMyShow.svg" alt="">
+                <p>Landify saved our time in designing my company page.</p>
+                <div class="profile-wrap">
+                    <div class="img-profile">
+                        <img src="../../../../assets/imgs/profile_3.svg" alt="">
+                    </div>
+                    <div class="name-profile">
+                        <h6>Kristin Watson</h6>
+                        <p>Co-Founder, BookMyShow</p>
+                    </div>
+                </div>
+            </div>
+        </div>      
+        <div class="slides">
+            <div class="card-1-testimonial ">
+                <img src="../../../../assets/imgs/airbnb.svg" alt="">
+                <p>To quickly start my startup landing page design, I was looking for a landing page UI Kit. 
+                    Landify is one of the best landing page UI kit I have come across. 
+                    It’s so flexible, well organised and easily editable.</p>
+                <div class="profile-wrap">
+                    <div class="img-profile">
+                        <img src="../../../../assets/imgs/profile_3.svg" alt="">
+                    </div>
+                    <div class="name-profile">
+                        <h6>Eror Miles</h6>
+                        <p>Vice President, GoPro</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-2-testimonial ">
+                <img src="../../../../assets/imgs/hubspot.svg" alt="">
+                <p>I used landify and created a landing page for my startup within a week.
+                    The Landify UI Kit is simple and highly intuitive, so anyone can use it.</p>
+                <div class="profile-wrap">
+                    <div class="img-profile">
+                        <img src="../../../../assets/imgs/profile_1.svg" alt="">
+                    </div>
+                    <div class="name-profile">
+                        <h6>Ardit Cooper</h6>
+                        <p>CEO, Airbnb</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-3-testimonial ">
+                <img src="../../../../assets/imgs/BookMyShow.svg" alt="">
+                <p>Landify saved our time in designing my company page.</p>
+                <div class="profile-wrap">
+                    <div class="img-profile">
+                        <img src="../../../../assets/imgs/profile_1.svg" alt="">
+                    </div>
+                    <div class="name-profile">
+                        <h6>Valdrin Watson</h6>
+                        <p>Co-Founder, BookMyShow</p>
+                    </div>
+                </div>
+            </div>
+        </div>      
+        </swiper>
+    </div>
+</div>
