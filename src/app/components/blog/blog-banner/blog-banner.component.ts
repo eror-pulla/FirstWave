@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, Input, ViewEncapsulation, OnInit, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
+import SwiperCore, { Navigation, Swiper, SwiperOptions } from 'swiper';
+SwiperCore.use([Navigation]);
 @Component({
   selector: 'app-blog-banner',
   templateUrl: './blog-banner.component.html',
-  styleUrls: ['./blog-banner.component.scss']
+  styleUrls: ['./blog-banner.component.scss'],
+  encapsulation: ViewEncapsulation.None
+
 })
 export class BlogBannerComponent implements OnInit {
 
@@ -11,5 +14,31 @@ export class BlogBannerComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
+  swiper = new Swiper('.swiper', {
+    speed: 400,
+    spaceBetween: 100,
+  });
+
+  config: SwiperOptions = {
+    slidesPerView: 1,
+    spaceBetween: 50,
+    effect:'fade',
+    pagination: {
+      el: ".swiper-pagination",
+      type: "fraction",
+    },
+    navigation:{
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
+  };
+
+
+
+  onSlideChange2() {
+    console.log('slide change');
+  }
+
 
 }

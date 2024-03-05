@@ -1,0 +1,190 @@
+@import "../../../../styles.scss";
+
+.wrap-banner-blog{
+    height: calc(100vh - 93px);
+    // padding-top: 96px;
+    background: $bg_fourth;
+    .isnide-blog-wrap{
+        height: 100%;
+        .container{
+            display: flex;
+            align-items: center;
+            height: 100%;
+            .col-6{
+                position: relative;
+                // height: 100%;
+                // display: flex;
+                // justify-content: center;
+                // align-items: center;
+                .swiper{
+                    height: 100%;
+                    position: relative;
+                    .slides{
+                        height: 100%;
+                        position: relative;   
+                        h5{
+                            font-family: $Poppins_font_700;
+                            font-size: 50px;
+                            line-height: 60px;
+                            color: $label_col_primary;
+                            margin-bottom: 24px;
+
+                        }
+                        .wraper-inside-slide{
+                            display: flex;
+                            align-items: center;
+                            gap: 21px;
+                            margin-bottom: 16px;
+                            img{
+
+                            }
+                            .para-tick{
+                                max-width: 75%;
+                                font-family: $Poppins_font_400;
+                                color: $black_color;
+                                font-size: 18px;
+                                line-height: 28px;
+
+                            }
+                        }
+                    }
+                    .swiper-button-next{
+                        top: 96% !important;
+                        position: absolute;
+                        bottom: 0 !important;
+                        width: 30px !important;
+                        margin-top: 0 !important;
+                        right: 50% !important;
+                        &::after{
+                            display: none !important;
+                        }
+                        img{
+
+                        }
+                    }
+                    .swiper-button-prev{
+                        top: 96% !important;
+                        left: 41% !important;
+                        position: absolute;
+                        bottom: 0 !important;
+                        width: 30px !important;
+                        margin-top: 0 !important;
+                        &::after{
+                            display: none !important;
+                        }
+                        img{
+                            
+                        }
+                    }
+                }
+            }
+            .col-6{
+                .wrap-card{
+                    position: relative;
+                    z-index: 2;
+                    &::after{
+                        content: "";
+                        top: -50px;
+                        left: 40px;
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        background-image: url(../../../../assets/imgs/after-bg.svg);
+                        background-size: contain; 
+                        background-repeat: no-repeat;
+                        opacity: 1;
+                        z-index: 1;
+                    }
+                    .card-custom{
+                        background: $background;
+                        border-radius: 16px;
+                        img{
+                            width: 100%;
+                            position: relative;
+                            z-index: 2;
+                        }
+                        .text-wrap{
+                            margin-top: 32px;
+                            padding: 0 32px 32px 32px;
+                            h6{
+                                font-family: $Poppins_font_600;
+                                color: $black_color;
+                                font-size: 24px;
+                                line-height: 32px;
+                            }
+                            p{
+                                font-family: $Poppins_font_400;
+                                color: $black_color;
+                                font-size: 16px;
+                                line-height: 24px;
+                            }
+                            .wrap-link-view{
+                                display: flex;
+                                align-items: center;
+                                a{
+                                    text-decoration: none;
+                                    font-family: $Poppins_font_600;
+                                    font-size: 16px;
+                                    line-height: 24px;
+                                    color: $primary_color;
+                                    img{
+                                        height: 12px;
+                                        width: 8px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.swiper-pagination{
+    text-align: left !important;
+    margin-top: 32px !important;
+}
+
+.swiper-pagination-fraction {
+    bottom: -22px !important;
+    font-weight: 600 !important;
+    span{
+        font-family: $Poppins_font_600 !important;
+        font-size: 18px !important;
+        line-height: 26px !important;
+    }
+
+}
+.swiper-container{
+    overflow: visible !important;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #ccc;
+    margin-top: 10px;
+  
+    .progress {
+      height: 100%;
+      background-color: #007bff;
+    }
+  }
+  .slider-container {
+    width: 300px;
+    margin: 20px auto;
+  }
+  
+  .progress-bar-container {
+    height: 20px;
+    width: 100%;
+    background-color: #ddd;
+    margin-top: 10px;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    background-color: #4caf50;
+    transition: width 0.3s ease-in-out;
+  }
+    
