@@ -14,7 +14,7 @@ export class TestimonialComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  swiper = new Swiper('.swiper', {
+  swiper = new Swiper('.swiper-testimonial', {
     speed: 400,
     spaceBetween: 100,
   });

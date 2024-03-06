@@ -16,9 +16,10 @@
                 // display: flex;
                 // justify-content: center;
                 // align-items: center;
-                .swiper{
+                .swiper-hero{
                     height: 100%;
                     position: relative;
+                    width: 100%;
                     .slides{
                         height: 100%;
                         position: relative;   
@@ -48,8 +49,8 @@
                             }
                         }
                     }
-                    .swiper-button-next{
-                        top: 96% !important;
+                    .swiper-button-next-banner{
+                        top: 97% !important;
                         position: absolute;
                         bottom: 0 !important;
                         width: 30px !important;
@@ -62,8 +63,8 @@
 
                         }
                     }
-                    .swiper-button-prev{
-                        top: 96% !important;
+                    .swiper-button-prev-banner{
+                        top: 97% !important;
                         left: 41% !important;
                         position: absolute;
                         bottom: 0 !important;
@@ -76,6 +77,54 @@
                             
                         }
                     }
+                    .swiper-pagination{
+                        text-align: left !important;
+                        margin-top: 32px !important;
+                    }
+                    
+                    .swiper-pagination-fraction {
+                        bottom: -22px !important;
+                        font-weight: 600 !important;
+                        span{
+                            font-family: $Poppins_font_600 !important;
+                            font-size: 18px !important;
+                            line-height: 26px !important;
+                        }
+                    
+                    }
+                    .swiper-container{
+                        overflow: visible !important;
+                    }
+                    
+                    .progress-bar {
+                        width: 100%;
+                        height: 10px;
+                        background-color: #ccc;
+                        margin-top: 10px;
+                      
+                        .progress {
+                          height: 100%;
+                          background-color: #007bff;
+                        }
+                      }
+                      .slider-container {
+                        width: 300px;
+                        margin: 20px auto;
+                      }
+                      
+                      .progress-bar-container {
+                        height: 20px;
+                        width: 100%;
+                        background-color: #ddd;
+                        margin-top: 10px;
+                      }
+                      
+                      .progress-bar {
+                        height: 100%;
+                        background-color: #4caf50;
+                        transition: width 0.3s ease-in-out;
+                      }
+                        
                 }
             }
             .col-6{
@@ -140,51 +189,3 @@
         }
     }
 }
-.swiper-pagination{
-    text-align: left !important;
-    margin-top: 32px !important;
-}
-
-.swiper-pagination-fraction {
-    bottom: -22px !important;
-    font-weight: 600 !important;
-    span{
-        font-family: $Poppins_font_600 !important;
-        font-size: 18px !important;
-        line-height: 26px !important;
-    }
-
-}
-.swiper-container{
-    overflow: visible !important;
-}
-
-.progress-bar {
-    width: 100%;
-    height: 10px;
-    background-color: #ccc;
-    margin-top: 10px;
-  
-    .progress {
-      height: 100%;
-      background-color: #007bff;
-    }
-  }
-  .slider-container {
-    width: 300px;
-    margin: 20px auto;
-  }
-  
-  .progress-bar-container {
-    height: 20px;
-    width: 100%;
-    background-color: #ddd;
-    margin-top: 10px;
-  }
-  
-  .progress-bar {
-    height: 100%;
-    background-color: #4caf50;
-    transition: width 0.3s ease-in-out;
-  }
-    

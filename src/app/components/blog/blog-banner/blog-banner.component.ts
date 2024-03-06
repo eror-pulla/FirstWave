@@ -15,23 +15,39 @@ export class BlogBannerComponent implements OnInit {
   ngOnInit(): void {
   }
   
-  swiper = new Swiper('.swiper', {
+  swiper = new Swiper('.swiper-hero', {
     speed: 400,
     spaceBetween: 100,
   });
 
-  config: SwiperOptions = {
+  // config: SwiperOptions = {
+  //   slidesPerView: 2,
+  //   spaceBetween: 50,
+  //   effect:'fade',
+  //   pagination: {
+  //     el: ".swiper-pagination",
+  //     type: "fraction",
+  //   },
+  //   navigation:{
+  //     nextEl: '.swiper-button-next',
+  //     prevEl: '.swiper-button-prev',
+  //   }
+  // };
+  swiperOptions: SwiperOptions = {
+    spaceBetween: 0,
+    centeredSlides: true,
+    loop: false,
     slidesPerView: 1,
-    spaceBetween: 50,
     effect:'fade',
     pagination: {
       el: ".swiper-pagination",
       type: "fraction",
     },
     navigation:{
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: '.swiper-button-next-banner',
+      prevEl: '.swiper-button-prev-banner',
     }
+
   };
 
 

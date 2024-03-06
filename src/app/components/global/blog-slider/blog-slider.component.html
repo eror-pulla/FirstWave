@@ -1,1 +1,49 @@
-<p>blog-slider works!</p>
+<div class="slider-blog">
+    <div class="wraper-slides-blog">
+        <div class="container">
+            <div class="wraper-btns">
+                <h5>Blogs</h5>
+                <div class="inside-btn">
+                    <button [class.blue-btn]="currentCategory === 'Blogs'" [class.white-bg-btn]="currentCategory !== 'Blogs'" (click)="filterByCategory('Blogs')">Blogs</button>
+                    <button [class.blue-btn]="currentCategory === 'Webinars'" [class.white-bg-btn]="currentCategory !== 'Webinars'" (click)="filterByCategory('Webinars')">Webinars</button>
+                    <button [class.blue-btn]="currentCategory === 'Enterprise'" [class.white-bg-btn]="currentCategory !== 'Enterprise'" (click)="filterByCategory('Enterprise')">Enterprise</button>
+                    <button [class.blue-btn]="currentCategory === 'Podcasts'" [class.white-bg-btn]="currentCategory !== 'Podcasts'" (click)="filterByCategory('Podcasts')">Podcasts</button>
+                    <button [class.blue-btn]="currentCategory === 'White Papers'" [class.white-bg-btn]="currentCategory !== 'White Papers'" (click)="filterByCategory('White Papers')">White papers</button>
+                    <button [class.blue-btn]="currentCategory === 'Case Studies'" [class.white-bg-btn]="currentCategory !== 'Case Studies'" (click)="filterByCategory('Case Studies')">Case Studies</button>
+                </div>
+            </div>
+            <div class="posts-wrap">
+              <swiper 
+              class="swiper swiper-blogs" 
+              [config]="swiperOptions"
+              (slideChange)="onSlideChange()">
+                <div *ngFor="let item of filteredBlogs" class="item">
+                  <div class="slides">
+                    <div class="card-custom">
+                      <img src="{{ item.image }}" alt="{{ item.title }}">
+                      <h5>{{ item.title }}</h5>
+                      <p>{{ item.description }}</p>
+                      <div class="wrap-time">
+                        <div class="wrap-link-view">
+                          <a href="{{ item.url }}">
+                            Read More
+                            <img src="../../../../assets/imgs/arrow-link.svg" alt="Read More">
+                          </a>
+                        </div>
+                        <p class="time">{{ item.readingTime }}</p>
+                      </div>
+                    </div>
+                  </div>                
+                </div>
+
+              </swiper>
+              <div class="swiper-button-next-blog">
+                <img src="../../../../assets/imgs/right.svg">
+            </div>
+            <div class="swiper-button-prev-blog">
+                <img src="../../../../assets/imgs/left.svg" >
+            </div>
+            </div>
+        </div>
+    </div>
+</div>

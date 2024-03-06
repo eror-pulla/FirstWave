@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./brands.component.scss']
 })
 export class BrandsComponent implements OnInit {
-
+  url = [];
   constructor() { }
 
   ngOnInit(): void {
+  // this.url.push();
   }
+
 
 }
