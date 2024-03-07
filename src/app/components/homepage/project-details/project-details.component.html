@@ -17,7 +17,7 @@
             </div>
             <div class="wrap-cards">
                 <div class="card" *ngFor="let card of cardContent[activeButton].cards">
-                  <img [src]="card.image" alt="">
+                  <img [src]="'../../../../assets/imgs/'+card.image" alt="">
                   <p>{{ card.text }}</p>
                 </div>
               </div>

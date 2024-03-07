@@ -37,7 +37,7 @@
         <div class="grid-wrap">
             <div class="service-wrap" *ngFor="let service of services">
             <div class="img-service-inside">
-                <img [src]="service.image" alt="">
+                <img [src]="'../../../../assets/imgs/'+service.image" alt="">
             </div>
             <div class="content-grid">
                 <h5>{{ service.title }}</h5>

@@ -1,6 +1,7 @@
 import { Component, Input, ViewEncapsulation, OnInit, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
 import SwiperCore, { Navigation, Swiper, SwiperOptions } from 'swiper';
 SwiperCore.use([Navigation]);
+
 interface Blog {
   title: string;
   image: string;
@@ -18,6 +19,7 @@ interface Blog {
 })
 
 export class BlogSliderComponent implements OnInit {
+  blogs: Blog[] = [];
 
 
   swiperOptions: SwiperOptions = {
@@ -31,86 +33,163 @@ export class BlogSliderComponent implements OnInit {
   };
 
   currentCategory: string = 'Blogs';
-  blogs: Blog[] = [
-    { 
-      title: 'Reasoning Ability',
-      image: "../../../assets/imgs/blog-slider1.svg",
-      description: 'Discover the top traits that help you excel and determine your work fit.',
-      url: 'url_to_blog',
-      readingTime: '30 Min',
-      categories: ['Blogs', 'Webinars']    
-    },
-    { 
-      title: 'Personality Assessment',
-      image: "../../../assets/imgs/blog-slider2.svg",
-      description: 'Discover the top traits that help you excel and determine your work fit.',
-      url: 'url_to_blog',
-      readingTime: '30 Min',
-      categories: ['Blogs', 'Podcasts', 'Webinars']    
-    },
-    { 
-      title: 'Cope Inventory',
-      image: "../../../assets/imgs/blog-slider3.svg",
-      description: 'Discover the top traits that help you excel and determine your work fit.',
-      url: 'url_to_blog',
-      readingTime: '30 Min',
-      categories: ['Blogs', 'White Papers', 'Case Studies']
-    },
-    { 
-      title: 'Entrepreneurial Personality',
-      image: "../../../assets/imgs/blog-slider1.svg",
-      description: 'Discover the top traits that help you excel and determine your work fit.',
-      url: 'url_to_blog',
-      readingTime: '30 Min',
-      categories: ['Blogs', 'Enterprise']
-    },
-    { 
-      title: 'Enterprise Functions',
-      image: "../../../assets/imgs/blog-slider2.svg",
-      description: 'Discover the top traits that help you excel and determine your work fit.',
-      url: 'url_to_blog',
-      readingTime: '30 Min',
-      categories: ['Enterprise', 'Case Studies' , 'Podcasts' ]
-    },
-    { 
-      title: 'Personality Assessment',
-      image: "../../../assets/imgs/blog-slider1.svg",
-      description: 'Discover the top traits that help you excel and determine your work fit.',
-      url: 'url_to_blog',
-      readingTime: '30 Min',
-      categories: ['Blogs', 'Podcasts', 'Webinars']    
-    },
-    { 
-      title: 'Cope Inventory',
-      image: "../../../assets/imgs/blog-slider3.svg",
-      description: 'Discover the top traits that help you excel and determine your work fit.',
-      url: 'url_to_blog',
-      readingTime: '30 Min',
-      categories: ['Blogs', 'White Papers', 'Case Studies']
-    },
-    { 
-      title: 'Enterprise Functions',
-      image: "../../../assets/imgs/blog-slider2.svg",
-      description: 'Discover the top traits that help you excel and determine your work fit.',
-      url: 'url_to_blog',
-      readingTime: '30 Min',
-      categories: ['Enterprise', 'Case Studies' , 'Podcasts' ]
-    },
-    { 
-      title: 'Enterprise Functions',
-      image: "../../../assets/imgs/blog-slider3.svg",
-      description: 'Discover the top traits that help you excel and determine your work fit.',
-      url: 'url_to_blog',
-      readingTime: '30 Min',
-      categories: ['Enterprise', 'Case Studies' , 'Podcasts' ]
-    },
-  ];
-
+  // blogs: Blog[] = [
+  //   { 
+  //     title: 'Reasoning Ability',
+  //     image: "../../../assets/imgs/blog-slider1.svg",
+  //     description: 'Discover the top traits that help you excel and determine your work fit.',
+  //     url: 'url_to_blog',
+  //     readingTime: '30 Min',
+  //     categories: ['Blogs', 'Webinars']    
+  //   },
+  //   { 
+  //     title: 'Personality Assessment',
+  //     image: "../../../assets/imgs/blog-slider2.svg",
+  //     description: 'Discover the top traits that help you excel and determine your work fit.',
+  //     url: 'url_to_blog',
+  //     readingTime: '30 Min',
+  //     categories: ['Blogs', 'Podcasts', 'Webinars']    
+  //   },
+  //   { 
+  //     title: 'Cope Inventory',
+  //     image: "../../../assets/imgs/blog-slider3.svg",
+  //     description: 'Discover the top traits that help you excel and determine your work fit.',
+  //     url: 'url_to_blog',
+  //     readingTime: '30 Min',
+  //     categories: ['Blogs', 'White Papers', 'Case Studies']
+  //   },
+  //   { 
+  //     title: 'Entrepreneurial Personality',
+  //     image: "../../../assets/imgs/blog-slider1.svg",
+  //     description: 'Discover the top traits that help you excel and determine your work fit.',
+  //     url: 'url_to_blog',
+  //     readingTime: '30 Min',
+  //     categories: ['Blogs', 'Enterprise']
+  //   },
+  //   { 
+  //     title: 'Enterprise Functions',
+  //     image: "../../../assets/imgs/blog-slider2.svg",
+  //     description: 'Discover the top traits that help you excel and determine your work fit.',
+  //     url: 'url_to_blog',
+  //     readingTime: '30 Min',
+  //     categories: ['Enterprise', 'Case Studies' , 'Podcasts' ]
+  //   },
+  //   { 
+  //     title: 'Personality Assessment',
+  //     image: "../../../assets/imgs/blog-slider1.svg",
+  //     description: 'Discover the top traits that help you excel and determine your work fit.',
+  //     url: 'url_to_blog',
+  //     readingTime: '30 Min',
+  //     categories: ['Blogs', 'Podcasts', 'Webinars']    
+  //   },
+  //   { 
+  //     title: 'Cope Inventory',
+  //     image: "../../../assets/imgs/blog-slider3.svg",
+  //     description: 'Discover the top traits that help you excel and determine your work fit.',
+  //     url: 'url_to_blog',
+  //     readingTime: '30 Min',
+  //     categories: ['Blogs', 'White Papers', 'Case Studies']
+  //   },
+  //   { 
+  //     title: 'Enterprise Functions',
+  //     image: "../../../assets/imgs/blog-slider2.svg",
+  //     description: 'Discover the top traits that help you excel and determine your work fit.',
+  //     url: 'url_to_blog',
+  //     readingTime: '30 Min',
+  //     categories: ['Enterprise', 'Case Studies' , 'Podcasts' ]
+  //   },
+  //   { 
+  //     title: 'Enterprise Functions',
+  //     image: "../../../assets/imgs/blog-slider3.svg",
+  //     description: 'Discover the top traits that help you excel and determine your work fit.',
+  //     url: 'url_to_blog',
+  //     readingTime: '30 Min',
+  //     categories: ['Enterprise', 'Case Studies' , 'Podcasts' ]
+  //   },
+  // ];
+  populateBlogs() {
+    this.blogs.push(
+      { 
+        title: 'Reasoning Ability',
+        image: "blog-slider1.svg",
+        description: 'Discover the top traits that help you excel and determine your work fit.',
+        url: 'url_to_blog',
+        readingTime: '30 Min',
+        categories: ['Blogs', 'Webinars']    
+      },
+      { 
+        title: 'Personality Assessment',
+        image: "blog-slider2.svg",
+        description: 'Discover the top traits that help you excel and determine your work fit.',
+        url: 'url_to_blog',
+        readingTime: '30 Min',
+        categories: ['Blogs', 'Podcasts', 'Webinars']    
+      },
+      { 
+        title: 'Cope Inventory',
+        image: "blog-slider3.svg",
+        description: 'Discover the top traits that help you excel and determine your work fit.',
+        url: 'url_to_blog',
+        readingTime: '30 Min',
+        categories: ['Blogs', 'White Papers', 'Case Studies']
+      },
+      { 
+        title: 'Entrepreneurial Personality',
+        image: "blog-slider1.svg",
+        description: 'Discover the top traits that help you excel and determine your work fit.',
+        url: 'url_to_blog',
+        readingTime: '30 Min',
+        categories: ['Blogs', 'Enterprise']
+      },
+      { 
+        title: 'Enterprise Functions',
+        image: "blog-slider2.svg",
+        description: 'Discover the top traits that help you excel and determine your work fit.',
+        url: 'url_to_blog',
+        readingTime: '30 Min',
+        categories: ['Enterprise', 'Case Studies' , 'Podcasts' ]
+      },
+      { 
+        title: 'Personality Assessment',
+        image: "blog-slider1.svg",
+        description: 'Discover the top traits that help you excel and determine your work fit.',
+        url: 'url_to_blog',
+        readingTime: '30 Min',
+        categories: ['Blogs', 'Podcasts', 'Webinars']    
+      },
+      { 
+        title: 'Cope Inventory',
+        image: "blog-slider3.svg",
+        description: 'Discover the top traits that help you excel and determine your work fit.',
+        url: 'url_to_blog',
+        readingTime: '30 Min',
+        categories: ['Blogs', 'White Papers', 'Case Studies']
+      },
+      { 
+        title: 'Enterprise Functions',
+        image: "blog-slider2.svg",
+        description: 'Discover the top traits that help you excel and determine your work fit.',
+        url: 'url_to_blog',
+        readingTime: '30 Min',
+        categories: ['Enterprise', 'Case Studies' , 'Podcasts' ]
+      },
+      { 
+        title: 'Enterprise Functions',
+        image: "blog-slider3.svg",
+        description: 'Discover the top traits that help you excel and determine your work fit.',
+        url: 'url_to_blog',
+        readingTime: '30 Min',
+        categories: ['Enterprise', 'Case Studies' , 'Podcasts' ]
+      },
+    );
+  }
+  
   filteredBlogs: Blog[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
+    this.populateBlogs();
     this.filteredBlogs = [...this.blogs];
   }
 

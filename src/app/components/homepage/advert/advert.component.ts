@@ -19,7 +19,7 @@ export class AdvertComponent implements OnInit {
       label:'Cybersecurity',
       value: 'Cybersecurity',
       class:'blue-btn',
-      checked: true
+      checked: false
     },
     {
       label:'Network Management',

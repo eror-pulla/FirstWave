@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit {
       label:'Cybersecurity',
       value: 'Cybersecurity',
       class:'blue-btn',
-      checked: true
+      checked: false
     },
     {
       label:'Network Management',
@@ -40,18 +40,7 @@ export class HeaderComponent implements OnInit {
   onDemoChange(event: any) {
     this.selectedDemo = event;
   }
-  // updateChecked(selectedDemo: any) {
-  //   this.demoArr.forEach(demo => {
-  //       demo.checked = (demo.value === selectedDemo);
-  //   });
-  //   this.cdr.detectChanges();
-  // }
-  // updateButtonClass() {
-  // const selectedDemoObj = this.demoArr.find(demo => demo.checked);
-  // if (selectedDemoObj) {
-  //   this.selectedDemo = selectedDemoObj.value;
-  // }
-  // }
+
   updateChecked(selectedDemo: any) {
     // Loop through demoArr to find the selected checkbox and toggle its state
     this.demoArr.forEach(demo => {

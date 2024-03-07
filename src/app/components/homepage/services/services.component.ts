@@ -12,14 +12,17 @@ export class ServicesComponent implements OnInit  {
   @Input() selectedDemo: any;
   // @Input() demoArr!: any[];
   @Output() demoChange = new EventEmitter<any>();
+  services: { image: string, title: string, text: string }[] = [];
 
-  constructor(private cdr: ChangeDetectorRef) { }
+  constructor(private cdr: ChangeDetectorRef) { 
+    this.populateServices();
+  }
   demoArr = [
     {
       label:'Cybersecurity',
       value: 'Cybersecurity',
       class:'blue-btn',
-      checked: true
+      checked: false
     },
     {
       label:'Network Management',
@@ -52,10 +55,12 @@ export class ServicesComponent implements OnInit  {
   }
   }
   
-  services = [
-    { image: "../../../../assets/imgs/01.svg", title: "Web Security", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis et sed nam sem tellus erat." },
-    { image: "../../../../assets/imgs/05.svg", title: "Network Monitoring", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis et sed nam sem tellus erat." },
-    { image: "../../../../assets/imgs/04.svg", title: "Data Encryption", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis et sed nam sem tellus erat." },
-    { image: "../../../../assets/imgs/07.svg", title: "Server Protection", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis et sed nam sem tellus erat." }
-  ];
+  populateServices() {
+    this.services.push(
+      { image: "01.svg", title: "Web Security", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis et sed nam sem tellus erat." },
+      { image: "05.svg", title: "Network Monitoring", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis et sed nam sem tellus erat." },
+      { image: "04.svg", title: "Data Encryption", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis et sed nam sem tellus erat." },
+      { image: "07.svg", title: "Server Protection", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis et sed nam sem tellus erat." }
+    );
+  }
 }

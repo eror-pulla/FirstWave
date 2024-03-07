@@ -23,7 +23,7 @@ export class ModalComponent {
     email:  new FormControl('', Validators.required),
     number: new FormControl('', Validators.required),
     device: new FormControl(),
-    country: new FormControl('', Validators.required),
+    country: new FormControl(),
     message: new FormControl()
   });
   get name(){
@@ -55,6 +55,13 @@ export class ModalComponent {
     this.isOpen = false;
     this.closeModal.emit();
   }
+  onCloseModalSubmitted() {
+    this.submittedData = !this.submittedData;
+    this.form.reset();    
+    this.isOpen = false;
+    this.closeModal.emit();
+  }
+
   updateChecked(selectedDemo: any) {
     this.demoArr.forEach(demo => {
         demo.checked = (demo.value === selectedDemo);
@@ -70,14 +77,22 @@ export class ModalComponent {
       this.selectedDemo = selectedDemoObj.value;
     }
   }
-
+  submittedData: any;
 
   
-  submittedData: any;
+  // onSubmit() {
+  //   if (this.form.valid) {
+  //     this.submittedData = this.form.value;
+  //     this.form.reset();
+  //     console.log('Form Submitted!', this.form.value);
+  //   } else {
+  //     console.log('Form is invalid');
+  //   }
+  // }
   onSubmit() {
     if (this.form.valid) {
       this.submittedData = this.form.value;
-      this.form.reset();
+      this.showToast(); // Optionally, show a toast or notification for successful submission
       console.log('Form Submitted!', this.form.value);
     } else {
       console.log('Form is invalid');
