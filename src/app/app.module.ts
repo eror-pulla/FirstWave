@@ -24,6 +24,9 @@ import { SwiperModule } from 'ngx-swiper-wrapper';
 import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { BlogBannerComponent } from './components/blog/blog-banner/blog-banner.component';
+import { SingleBlogComponent } from './components/blog/single-blog/single-blog.component';
+import { BannerSingleComponent } from './components/blog/single-blog/banner-single/banner-single.component';
+import { InfoSingleComponent } from './components/blog/single-blog/info-single/info-single.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -47,7 +50,10 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     AdvertComponent,
     ModalComponent,
     TestimonialComponent,
-    BlogBannerComponent
+    BlogBannerComponent,
+    SingleBlogComponent,
+    BannerSingleComponent,
+    InfoSingleComponent
   ],
   imports: [
     BrowserModule,

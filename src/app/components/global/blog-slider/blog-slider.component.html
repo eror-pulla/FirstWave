@@ -25,10 +25,11 @@
                       <p>{{ item.description }}</p>
                       <div class="wrap-time">
                         <div class="wrap-link-view">
-                          <a href="{{ item.url }}">
+                          <a [routerLink]="[item.id]">
                             Read More
                             <img src="../../../../assets/imgs/arrow-link.svg" alt="Read More">
                           </a>
+                          
                         </div>
                         <p class="time">{{ item.readingTime }}</p>
                       </div>

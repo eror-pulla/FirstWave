@@ -1,0 +1,76 @@
+@import '../../../../../styles.scss';
+.wraper-info-single{
+    background: $bg_gray_color;
+    padding-top: 64px;
+        .banner-single{
+            .col-wraper-single{
+                .container{
+                    display: flex;
+                    align-items: center;
+                    .col-6{
+                        .title{
+                            color: $label_col_primary;
+                            font-family: $Poppins_font_700;
+                            font-size: 50px;
+                            line-height: 60px;
+                            margin-bottom: 16px;
+                        }
+                        p{
+                            color:$gray_color;
+                            font-family: $Poppins_font_400;
+                            font-size: 18px;
+                            line-height: 27px;
+                            margin-bottom: 16px;
+                        }
+                        .bold-para{
+                            color:$black_color;
+                            font-family: $Poppins_font_600;
+                            font-weight: 500;
+                            font-size: 18px;
+                            line-height: 28px;
+                        }
+                    }
+                    .col-6{
+                        .img-wrap-col{
+                            display: flex;
+                            justify-content: end;
+                            position: relative;
+                            &::before{
+                                content: "";
+                                top: 50px;
+                                left: 95px;
+                                width: 125px;
+                                height: 169px;
+                                position: absolute;
+                                background-image: url(../../../../../assets/imgs/blog-shape-1.svg);
+                                background-size: contain; 
+                                background-repeat: no-repeat;
+                                opacity: 1;
+                                z-index: 1;
+                            }
+                            &::after{
+                                content: "";
+                                rotate: 90deg;
+                                bottom: -63px;
+                                right: 0px;
+                                width: 125px;
+                                height: 169px;
+                                position: absolute;
+                                background-image: url(../../../../../assets/imgs/blog-shape-1.svg);
+                                background-size: contain;
+                                background-repeat: no-repeat;
+                                opacity: 1;
+                                z-index: 1;
+                                transform: rotateY(180deg);
+                            
+                            }
+                            img{
+                                position: relative;
+                                z-index: 2;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }

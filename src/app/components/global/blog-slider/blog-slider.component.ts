@@ -3,10 +3,11 @@ import SwiperCore, { Navigation, Swiper, SwiperOptions } from 'swiper';
 SwiperCore.use([Navigation]);
 
 interface Blog {
+  id: string;
   title: string;
   image: string;
   description: string;
-  url: string;
+  // url: string;
   readingTime: string;
   categories: string[];
 }
@@ -110,74 +111,75 @@ export class BlogSliderComponent implements OnInit {
   populateBlogs() {
     this.blogs.push(
       { 
+        id:'1',
         title: 'Reasoning Ability',
         image: "blog-slider1.svg",
         description: 'Discover the top traits that help you excel and determine your work fit.',
-        url: 'url_to_blog',
         readingTime: '30 Min',
         categories: ['Blogs', 'Webinars']    
       },
       { 
+        id:'2',
         title: 'Personality Assessment',
         image: "blog-slider2.svg",
         description: 'Discover the top traits that help you excel and determine your work fit.',
-        url: 'url_to_blog',
         readingTime: '30 Min',
         categories: ['Blogs', 'Podcasts', 'Webinars']    
       },
       { 
+        id:'3',
+
         title: 'Cope Inventory',
         image: "blog-slider3.svg",
         description: 'Discover the top traits that help you excel and determine your work fit.',
-        url: 'url_to_blog',
         readingTime: '30 Min',
         categories: ['Blogs', 'White Papers', 'Case Studies']
       },
       { 
+        id:'4',
         title: 'Entrepreneurial Personality',
         image: "blog-slider1.svg",
         description: 'Discover the top traits that help you excel and determine your work fit.',
-        url: 'url_to_blog',
         readingTime: '30 Min',
         categories: ['Blogs', 'Enterprise']
       },
       { 
+        id:'5',
         title: 'Enterprise Functions',
         image: "blog-slider2.svg",
         description: 'Discover the top traits that help you excel and determine your work fit.',
-        url: 'url_to_blog',
         readingTime: '30 Min',
         categories: ['Enterprise', 'Case Studies' , 'Podcasts' ]
       },
       { 
+        id:'6',
         title: 'Personality Assessment',
         image: "blog-slider1.svg",
         description: 'Discover the top traits that help you excel and determine your work fit.',
-        url: 'url_to_blog',
         readingTime: '30 Min',
         categories: ['Blogs', 'Podcasts', 'Webinars']    
       },
       { 
+        id:'7',
         title: 'Cope Inventory',
         image: "blog-slider3.svg",
         description: 'Discover the top traits that help you excel and determine your work fit.',
-        url: 'url_to_blog',
         readingTime: '30 Min',
         categories: ['Blogs', 'White Papers', 'Case Studies']
       },
       { 
+        id:'8',
         title: 'Enterprise Functions',
         image: "blog-slider2.svg",
         description: 'Discover the top traits that help you excel and determine your work fit.',
-        url: 'url_to_blog',
         readingTime: '30 Min',
         categories: ['Enterprise', 'Case Studies' , 'Podcasts' ]
       },
       { 
+        id:'9',
         title: 'Enterprise Functions',
         image: "blog-slider3.svg",
         description: 'Discover the top traits that help you excel and determine your work fit.',
-        url: 'url_to_blog',
         readingTime: '30 Min',
         categories: ['Enterprise', 'Case Studies' , 'Podcasts' ]
       },
@@ -185,7 +187,10 @@ export class BlogSliderComponent implements OnInit {
   }
   
   filteredBlogs: Blog[] = [];
-
+  
+  // navigateToBlog(id: string) {
+  //   this.router.navigate(['/blog', id]);
+  // }
   constructor() { }
 
   ngOnInit(): void {
