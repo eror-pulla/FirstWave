@@ -1,1 +1,34 @@
 @import '../../../../../styles.scss';
+
+.info-section{
+    padding-top: 90px;
+    background: $bg_gray_color;
+    .wraper-info{
+        .container{
+            padding-bottom: 2px;
+            .col-8{
+                .wraper-inside-info{
+                    margin-bottom: 42px;
+                    h5{
+                        color: $black_color;
+                        font-family: $manrope_font_600;
+                        font-size: 24px;
+                        line-height: 32px;
+                        margin-bottom: 16px;
+                    }
+                    p{
+                        color: $gray_color;
+                        font-family: $Poppins_font_400;
+                        font-size: 18px;
+                        line-height: 27px;
+                        .blue-text{
+                            color: $primary_color;
+                            font-family: $Poppins_font_400;
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
