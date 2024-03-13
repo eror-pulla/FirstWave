@@ -1,1 +1,49 @@
 @import '../../../../styles.scss';
+
+.products{
+    background: $bg_gray_color;
+    .products-wraper{
+        .container{
+            .inside-products{
+                padding-top: 96px;
+                padding-bottom: 80px;
+                .title{
+                    text-align: center;
+                    font-family: $Poppins_font_700;
+                    font-size: 40px;
+                    line-height: 48px;
+                    color: $label_col_primary;
+                    margin-bottom: 48px;
+                }
+                .grid-products{
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-gap: 30px;
+                 .product{
+                    align-items: center;
+                    display: flex;
+                    flex-direction: column;
+                    img{
+                        margin-bottom: 24px;
+
+                    }
+                    .subtitle{
+                        font-family: $manrope_font_600;
+                        font-size: 24px;
+                        line-height: 32px;
+                        color: $black_color;
+                        margin-bottom: 8px;
+                    }
+                    .text{
+                        color: $label_col_secondary;
+                        font-family: $manrope_font_400;
+                        font-size: 16px;
+                        line-height: 26px;
+                        text-align: center;
+                    }
+                 }   
+                }
+            }
+        }
+    }
+}

@@ -7,7 +7,6 @@ interface Blog {
   title: string;
   image: string;
   description: string;
-  // url: string;
   readingTime: string;
   categories: string[];
   bigTitle: string
@@ -22,10 +21,6 @@ interface Blog {
 
 export class BlogSliderComponent implements OnInit {
 
-  @Output() blogDataEmitter = new EventEmitter<any>();
-  blogs: Blog[] = [];
-
-
   swiperOptions: SwiperOptions = {
     loop: false,
     slidesPerView: 3,    
@@ -36,81 +31,10 @@ export class BlogSliderComponent implements OnInit {
     }
   };
 
+  
+  @Output() blogDataEmitter = new EventEmitter<any>();
+  blogs: Blog[] = [];
   currentCategory: string = 'Blogs';
-  // blogs: Blog[] = [
-  //   { 
-  //     title: 'Reasoning Ability',
-  //     image: "../../../assets/imgs/blog-slider1.svg",
-  //     description: 'Discover the top traits that help you excel and determine your work fit.',
-  //     url: 'url_to_blog',
-  //     readingTime: '30 Min',
-  //     categories: ['Blogs', 'Webinars']    
-  //   },
-  //   { 
-  //     title: 'Personality Assessment',
-  //     image: "../../../assets/imgs/blog-slider2.svg",
-  //     description: 'Discover the top traits that help you excel and determine your work fit.',
-  //     url: 'url_to_blog',
-  //     readingTime: '30 Min',
-  //     categories: ['Blogs', 'Podcasts', 'Webinars']    
-  //   },
-  //   { 
-  //     title: 'Cope Inventory',
-  //     image: "../../../assets/imgs/blog-slider3.svg",
-  //     description: 'Discover the top traits that help you excel and determine your work fit.',
-  //     url: 'url_to_blog',
-  //     readingTime: '30 Min',
-  //     categories: ['Blogs', 'White Papers', 'Case Studies']
-  //   },
-  //   { 
-  //     title: 'Entrepreneurial Personality',
-  //     image: "../../../assets/imgs/blog-slider1.svg",
-  //     description: 'Discover the top traits that help you excel and determine your work fit.',
-  //     url: 'url_to_blog',
-  //     readingTime: '30 Min',
-  //     categories: ['Blogs', 'Enterprise']
-  //   },
-  //   { 
-  //     title: 'Enterprise Functions',
-  //     image: "../../../assets/imgs/blog-slider2.svg",
-  //     description: 'Discover the top traits that help you excel and determine your work fit.',
-  //     url: 'url_to_blog',
-  //     readingTime: '30 Min',
-  //     categories: ['Enterprise', 'Case Studies' , 'Podcasts' ]
-  //   },
-  //   { 
-  //     title: 'Personality Assessment',
-  //     image: "../../../assets/imgs/blog-slider1.svg",
-  //     description: 'Discover the top traits that help you excel and determine your work fit.',
-  //     url: 'url_to_blog',
-  //     readingTime: '30 Min',
-  //     categories: ['Blogs', 'Podcasts', 'Webinars']    
-  //   },
-  //   { 
-  //     title: 'Cope Inventory',
-  //     image: "../../../assets/imgs/blog-slider3.svg",
-  //     description: 'Discover the top traits that help you excel and determine your work fit.',
-  //     url: 'url_to_blog',
-  //     readingTime: '30 Min',
-  //     categories: ['Blogs', 'White Papers', 'Case Studies']
-  //   },
-  //   { 
-  //     title: 'Enterprise Functions',
-  //     image: "../../../assets/imgs/blog-slider2.svg",
-  //     description: 'Discover the top traits that help you excel and determine your work fit.',
-  //     url: 'url_to_blog',
-  //     readingTime: '30 Min',
-  //     categories: ['Enterprise', 'Case Studies' , 'Podcasts' ]
-  //   },
-  //   { 
-  //     title: 'Enterprise Functions',
-  //     image: "../../../assets/imgs/blog-slider3.svg",
-  //     description: 'Discover the top traits that help you excel and determine your work fit.',
-  //     url: 'url_to_blog',
-  //     readingTime: '30 Min',
-  //     categories: ['Enterprise', 'Case Studies' , 'Podcasts' ]
-  //   },
-  // ];
   populateBlogs() {
     this.blogs.push(
       { 
@@ -189,22 +113,17 @@ export class BlogSliderComponent implements OnInit {
     );
     this.blogDataEmitter.emit(this.blogs);
   }
-  
   filteredBlogs: Blog[] = [];
-  
-  // navigateToBlog(id: string) {
-  //   this.router.navigate(['/blog', id]);
-  // }
   constructor() { }
-
   ngOnInit(): void {
     this.populateBlogs();
     this.filteredBlogs = [...this.blogs];
   }
-
   filterByCategory(category: string) {
     this.currentCategory = category;
-    this.filteredBlogs = this.blogs.filter(blog => blog.categories.includes(category));  }
+    this.filteredBlogs = this.blogs.filter(blog => blog.categories.includes(category));  
+  }
+  
 
   onSlideChange() {
     console.log('slide change');

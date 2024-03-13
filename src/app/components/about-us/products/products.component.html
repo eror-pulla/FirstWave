@@ -1,1 +1,16 @@
-<p>products works!</p>
+<div class="products">
+    <div class="products-wraper">
+        <div class="container">
+            <div class="inside-products">
+                <h4 class="title">Our products</h4>
+                <div class="grid-products">
+                    <div class="product" *ngFor="let product of products">
+                      <img [src]="'../../../../assets/imgs/'+product.imageUrl" alt="">
+                      <p class="subtitle">{{ product.subtitle }}</p>
+                      <p class="text">{{ product.text }}</p>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>

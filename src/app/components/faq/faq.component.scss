@@ -2,7 +2,7 @@
 
 .accordion-wraper-container{
     padding: 96px 0;
-    background:$bg_fourth;
+    background:$bg_gray_color;
     .wrap-margin-cont{
         max-width: 50%;
         margin: 0 auto;
@@ -27,12 +27,12 @@
     font-family: 'Poppins SemiBold', sans-serif;
 }
 .accordion{
-    background: $bg_fourth !important;
+    background: $bg_gray_color!important;
 }
 .accordion-button:not(.collapsed){
-    background: $bg_fourth !important;
+    background: $bg_gray_color!important;
 }.accordion-button{
-    background: $bg_fourth !important;
+    background: $bg_gray_color!important;
     font-size: 20px;
     line-height: 26px;
     color: $black_color;
@@ -42,7 +42,7 @@ border: none !important;
 box-shadow: none !important;
 }
 .accordion-body{
-    background: $bg_fourth !important;
+    background: $bg_gray_color!important;
     font-family: 'Poppins Regular', sans-serif;
     font-size: 15px;
 }
