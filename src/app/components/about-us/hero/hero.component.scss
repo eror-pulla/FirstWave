@@ -1,0 +1,83 @@
+@import '../../../../styles.scss';
+.hero-wrap{
+    height: calc(100vh);
+    // padding-top: 96px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .inside-hero{
+        .container{
+            display: flex;
+            align-items: center;
+            .col-6{
+                .title{
+                    font-family: $Poppins_font_700;
+                    color: $label_col_primary;
+                    font-size: 50px;
+                    line-height: 60px;
+                    margin-bottom: 32px;
+                }
+                .sub-title{
+                    font-family: $Poppins_font_400;
+                    color: $label_col_primary;
+                    font-size: 20px;
+                    line-height: 32px;
+                    margin-bottom: 16px;
+                }
+                .para{
+                    font-family: $Poppins_font_400;
+                    color: $label_col_secondary;
+                    font-size: 18px;
+                    line-height: 30px;
+                    margin-bottom: 32px;
+                }
+                .wraper-btn{
+                    .blue-btn{
+
+                    }
+                }
+                
+            }
+            .col-6{
+                .img-wrap{
+                    display: flex;
+                    justify-content: end;
+                    img{
+                        position: relative;
+                        z-index: 2;
+                    }
+                    &::after{
+                        background-image: url(../../../../assets/imgs/about-after2.svg);
+                        content: "";
+                        top: 325px;
+                        right: 356px;
+                        width: 444px;
+                        height: 480px;
+                        position: absolute;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        opacity: 1;
+                        z-index: 1;
+                    
+                    }
+                    &::before{
+                        background-image: url(../../../../assets/imgs/about-after1.svg);
+                        content: "";
+                        bottom: 320px;
+                        right: 436px;
+                        width: 444px;
+                        height: 480px;
+                        position: absolute;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        opacity: 1;
+                        z-index: 1;
+                    
+                    }
+                }
+            }
+        }
+    }
+}

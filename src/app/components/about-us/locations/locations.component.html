@@ -1,0 +1,25 @@
+<div class="locations">
+    <div class="wrap-locations">
+        <div class="container">
+            <h5 class="title">Locations</h5>
+            <div class="wraper-cards">
+                <div class="cards" *ngFor="let contact of contacts">
+                  <img [src]="'../../../../assets/imgs/'+ contact.imageUrl" alt="">
+                  <p class="title-card">{{ contact.title }}</p>
+                  <div class="phone-wrap">
+                    <img src="../../../../assets/imgs/call_phone.svg" alt="">
+                    <p>{{ contact.phone }}</p>
+                  </div>
+                  <div class="email-wrap">
+                    <img src="../../../../assets/imgs/message1.svg" alt="">
+                    <p>{{ contact.email }}</p>
+                  </div>
+                  <div class="location-wrap">
+                    <img src="../../../../assets/imgs/location1.svg" alt="">
+                    <p>{{ contact.location }}</p>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>

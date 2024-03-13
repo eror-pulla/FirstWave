@@ -1,0 +1,98 @@
+@import '../../../../styles.scss';
+.locations{
+    background: $bg_gray_color;
+    padding-bottom: 90px;
+    padding-top: 80px;
+    .wrap-locations{
+        .container{
+            .title{
+                color: $label_col_primary;
+                font-family: $Poppins_font_700;
+                font-size: 40px;
+                line-height: 48px;
+                margin-bottom: 32px;
+            }
+            .wraper-cards{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 45px; 
+                .cards{
+                    background: $background;
+                    border-radius: 16px 16px;
+                    img{
+                        width:100%;
+                    }
+                    .title-card{
+                        text-align: center;
+                        margin-bottom: 12px;
+                        margin-top: 16px;
+                        color: $label_col_primary;
+                        font-family: $Poppins_font_600;
+                        font-size: 18px;
+                        line-height: 27px;
+
+                    }
+                    .phone-wrap{
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                        margin-bottom: 12px;
+                        padding-left: 18px;
+
+                        img{
+                            width: auto;
+
+                        }
+                        p{
+                            margin: 0;
+                            color: $gray_color;
+                            font-family: $Poppins_font_400;
+                            font-size: 14px;
+                            line-height: 21px;
+                            
+                        }
+                    }
+                    .email-wrap{
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                        margin-bottom: 12px;
+                        padding-left: 18px;
+
+                        img{
+                            width: auto;
+
+                        }
+                        p{
+                            margin: 0;
+                            color: $gray_color;
+                            font-family: $Poppins_font_400;
+                            font-size: 14px;
+                            line-height: 21px;
+
+
+                        }
+                    }
+                    .location-wrap{
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                        padding-left: 18px; 
+                        margin-bottom: 24px;
+                        img{
+                            width: auto;
+
+                        }
+                        p{
+                            margin: 0;
+                            color: $gray_color;
+                            font-family: $Poppins_font_400;
+                            font-size: 14px;
+                            line-height: 21px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

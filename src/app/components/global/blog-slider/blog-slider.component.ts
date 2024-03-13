@@ -1,4 +1,4 @@
-import { Component, Input, ViewEncapsulation, OnInit, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
+import { Component, Input, Output, ViewEncapsulation, OnInit, ViewChild, AfterViewInit, ElementRef, EventEmitter } from '@angular/core';
 import SwiperCore, { Navigation, Swiper, SwiperOptions } from 'swiper';
 SwiperCore.use([Navigation]);
 
@@ -10,6 +10,7 @@ interface Blog {
   // url: string;
   readingTime: string;
   categories: string[];
+  bigTitle: string
 }
 @Component({
   selector: 'app-blog-slider',
@@ -20,6 +21,8 @@ interface Blog {
 })
 
 export class BlogSliderComponent implements OnInit {
+
+  @Output() blogDataEmitter = new EventEmitter<any>();
   blogs: Blog[] = [];
 
 
@@ -116,7 +119,8 @@ export class BlogSliderComponent implements OnInit {
         image: "blog-slider1.svg",
         description: 'Discover the top traits that help you excel and determine your work fit.',
         readingTime: '30 Min',
-        categories: ['Blogs', 'Webinars']    
+        categories: ['Blogs', 'Webinars'],
+        bigTitle:'Using Configuration Management to Detect Unwanted Software',    
       },
       { 
         id:'2',
@@ -124,7 +128,8 @@ export class BlogSliderComponent implements OnInit {
         image: "blog-slider2.svg",
         description: 'Discover the top traits that help you excel and determine your work fit.',
         readingTime: '30 Min',
-        categories: ['Blogs', 'Podcasts', 'Webinars']    
+        categories: ['Blogs', 'Podcasts', 'Webinars'],
+        bigTitle:'Personality Assessment ipsum do eiusmod tempor ',   
       },
       { 
         id:'3',
@@ -133,7 +138,8 @@ export class BlogSliderComponent implements OnInit {
         image: "blog-slider3.svg",
         description: 'Discover the top traits that help you excel and determine your work fit.',
         readingTime: '30 Min',
-        categories: ['Blogs', 'White Papers', 'Case Studies']
+        categories: ['Blogs', 'White Papers', 'Case Studies'],
+        bigTitle:'Cope Inventory ipsum do eiusmod tempor ',   
       },
       { 
         id:'4',
@@ -141,7 +147,8 @@ export class BlogSliderComponent implements OnInit {
         image: "blog-slider1.svg",
         description: 'Discover the top traits that help you excel and determine your work fit.',
         readingTime: '30 Min',
-        categories: ['Blogs', 'Enterprise']
+        categories: ['Blogs', 'Enterprise'],
+        bigTitle:'Entrepreneurial Personality ipsum do eiusmod tempor ',   
       },
       { 
         id:'5',
@@ -149,7 +156,8 @@ export class BlogSliderComponent implements OnInit {
         image: "blog-slider2.svg",
         description: 'Discover the top traits that help you excel and determine your work fit.',
         readingTime: '30 Min',
-        categories: ['Enterprise', 'Case Studies' , 'Podcasts' ]
+        categories: ['Enterprise', 'Case Studies' , 'Podcasts' ],
+        bigTitle:'Enterprise Functions ipsum do eiusmod tempor',   
       },
       { 
         id:'6',
@@ -157,7 +165,8 @@ export class BlogSliderComponent implements OnInit {
         image: "blog-slider1.svg",
         description: 'Discover the top traits that help you excel and determine your work fit.',
         readingTime: '30 Min',
-        categories: ['Blogs', 'Podcasts', 'Webinars']    
+        categories: ['Blogs', 'Podcasts', 'Webinars'],
+        bigTitle:'',   
       },
       { 
         id:'7',
@@ -165,7 +174,8 @@ export class BlogSliderComponent implements OnInit {
         image: "blog-slider3.svg",
         description: 'Discover the top traits that help you excel and determine your work fit.',
         readingTime: '30 Min',
-        categories: ['Blogs', 'White Papers', 'Case Studies']
+        categories: ['Blogs', 'White Papers', 'Case Studies'],
+        bigTitle:'Personality Assessment2',   
       },
       { 
         id:'8',
@@ -173,17 +183,11 @@ export class BlogSliderComponent implements OnInit {
         image: "blog-slider2.svg",
         description: 'Discover the top traits that help you excel and determine your work fit.',
         readingTime: '30 Min',
-        categories: ['Enterprise', 'Case Studies' , 'Podcasts' ]
-      },
-      { 
-        id:'9',
-        title: 'Enterprise Functions',
-        image: "blog-slider3.svg",
-        description: 'Discover the top traits that help you excel and determine your work fit.',
-        readingTime: '30 Min',
-        categories: ['Enterprise', 'Case Studies' , 'Podcasts' ]
+        categories: ['Enterprise', 'Case Studies' , 'Podcasts' ],
+        bigTitle:'Enterprise Functions 2',   
       },
     );
+    this.blogDataEmitter.emit(this.blogs);
   }
   
   filteredBlogs: Blog[] = [];

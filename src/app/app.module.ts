@@ -27,6 +27,11 @@ import { BlogBannerComponent } from './components/blog/blog-banner/blog-banner.c
 import { SingleBlogComponent } from './components/blog/single-blog/single-blog.component';
 import { BannerSingleComponent } from './components/blog/single-blog/banner-single/banner-single.component';
 import { InfoSingleComponent } from './components/blog/single-blog/info-single/info-single.component';
+import { HeroComponent } from './components/about-us/hero/hero.component';
+import { LocationsComponent } from './components/about-us/locations/locations.component';
+import { ProductsComponent } from './components/about-us/products/products.component';
+import { OurStoryComponent } from './components/about-us/our-story/our-story.component';
+import { TeamComponent } from './components/about-us/team/team.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -53,7 +58,12 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     BlogBannerComponent,
     SingleBlogComponent,
     BannerSingleComponent,
-    InfoSingleComponent
+    InfoSingleComponent,
+    HeroComponent,
+    LocationsComponent,
+    ProductsComponent,
+    OurStoryComponent,
+    TeamComponent
   ],
   imports: [
     BrowserModule,

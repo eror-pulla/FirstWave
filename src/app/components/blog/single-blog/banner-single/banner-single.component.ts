@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
 
 @Component({
   selector: 'app-banner-single',
@@ -6,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./banner-single.component.scss']
 })
 export class BannerSingleComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit(): void {
