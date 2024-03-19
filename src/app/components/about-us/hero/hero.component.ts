@@ -9,10 +9,9 @@ export class HeroComponent implements OnInit {
 
   @Input() isOpen: boolean = false;
   @Input() selectedDemo: any;
-  // @Input() demoArr!: any[];
   @Output() demoChange = new EventEmitter<any>();
   @Output() closeModal: EventEmitter<void> = new EventEmitter<void>();
-
+  isOpen1: boolean = false;
 
   constructor(private cdr: ChangeDetectorRef) { }
   demoArr = [
@@ -32,6 +31,13 @@ export class HeroComponent implements OnInit {
   ];
   ngOnInit(): void {
   }
+  modalOpen1: boolean = false;
+  openModal1() {
+    this.modalOpen1 = true;
+  }
+  
+
+
   modalOpen: boolean = false;
   openModal() {
     this.modalOpen = true; 
@@ -40,12 +46,10 @@ export class HeroComponent implements OnInit {
   onDemoChange(event: any) {
     this.selectedDemo = event;
   }
-
   updateChecked(selectedDemo: any) {
-    // Loop through demoArr to find the selected checkbox and toggle its state
     this.demoArr.forEach(demo => {
       if (demo.value === selectedDemo) {
-        demo.checked = !demo.checked; // Toggle the checkbox state
+        demo.checked = !demo.checked;
       }
     });
   }

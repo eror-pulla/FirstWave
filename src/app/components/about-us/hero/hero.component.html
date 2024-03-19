@@ -6,8 +6,8 @@
                 <p class="sub-title">Who are we? Opmantek is a team of talented individuals working together to make software people love.</p>
                 <p class="para">We develop multi-award winning enterprise-class software that helps IT teams audit IT environments.</p>
                 <div class="wraper-btn">
-                    <button class="blue-btn">Contact Us</button>
-                    <button class="green-btn" (click)="openModal()" >Book a demo</button>
+                    <button class="blue-btn" (click)="openModal1()">Contact Us</button>
+                    <button class="green-btn" (click)="openModal()">Book a demo</button>
                 </div>
             </div>
             <div class="col-6">
@@ -23,3 +23,6 @@
 (demoChange)="onDemoChange($event)" 
 [selectedDemo]="selectedDemo" 
 [demoArr]="demoArr"></app-modal>
+
+<app-modal-contact [isOpen]="modalOpen1"
+(closeModal)="modalOpen1 = false"></app-modal-contact>

@@ -2,20 +2,15 @@ import { Component, Input, Output, EventEmitter, HostListener } from '@angular/c
 import { ChangeDetectorRef } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
-
 @Component({
-  selector: 'app-modal',
-  templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.scss']
+  selector: 'app-modal-contact',
+  templateUrl: './modal-contact.component.html',
+  styleUrls: ['./modal-contact.component.scss']
 })
-export class ModalComponent {
+export class ModalContactComponent{
   @Input() isOpen: boolean = false;
   @Output() closeModal: EventEmitter<void> = new EventEmitter<void>();
-  @Input() selectedDemo: any;
-  @Input() demoArr!: any[];
-  @Output() demoChange = new EventEmitter<any>();
-  
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor(private cdr: ChangeDetectorRef) { }
 
   form= new FormGroup({
     name: new FormControl('', Validators.required),
@@ -41,40 +36,26 @@ export class ModalComponent {
   get country(){
     return this.form.get('country');
   }
+
+  modalOpen: boolean = false;
+  isOpen1: boolean = false;
+  openModal1() {
+    this.modalOpen = true;
+  }
+
   @HostListener('document:keydown.escape', ['$event']) 
   handleEscapeKey(event: KeyboardEvent) {
     if (this.isOpen) {
       this.onCloseModal();
     }
   }
-  changeDemo(demo: any) {
-    this.demoChange.emit(demo);
-  }
   onCloseModal() {
-    this.isOpen = false;
+    this.isOpen1 = false;
     this.closeModal.emit();
   }
-  onCloseModalSubmitted() {
-    this.submittedData = !this.submittedData;
-    this.form.reset();    
-    this.isOpen = false;
-    this.closeModal.emit();
+  ngOnInit(): void {
   }
-  updateChecked(selectedDemo: any) {
-    this.demoArr.forEach(demo => {
-        demo.checked = (demo.value === selectedDemo);
-    });
-    // Update button class based on the selected checkbox
-    this.updateButtonClass();
-    // Trigger change detection manually
-    this.cdr.detectChanges();
-  }
-  updateButtonClass() {
-    const selectedDemoObj = this.demoArr.find(demo => demo.checked);
-    if (selectedDemoObj) {
-      this.selectedDemo = selectedDemoObj.value;
-    }
-  }
+
   submittedData: any;
   onSubmit() {
     if (this.form.valid) {
@@ -85,17 +66,17 @@ export class ModalComponent {
       console.log('Form is invalid');
     }
   }
-
-showingToast: boolean = false;
-showToast() {
-  this.showingToast = true;
-  setTimeout(() => {
-    this.showingToast = false;
-  }, 4000); // Hide the toast after 3 seconds
+  onCloseModalSubmitted1() {
+    this.submittedData = !this.submittedData;
+    this.form.reset();    
+    this.isOpen = false;
+    this.closeModal.emit();
+  }
+  showingToast: boolean = false;
+  showToast() {
+    this.showingToast = true;
+    setTimeout(() => {
+      this.showingToast = false;
+    }, 3000); 
+  }
 }
-
-
-}
-
-
-
