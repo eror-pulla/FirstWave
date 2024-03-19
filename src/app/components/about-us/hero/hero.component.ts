@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, Input, Output, EventEmitter  } from '@angular/core';
+import { ChangeDetectorRef } from '@angular/core';
 @Component({
   selector: 'app-hero',
   templateUrl: './hero.component.html',
@@ -7,9 +7,46 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroComponent implements OnInit {
 
-  constructor() { }
+  @Input() isOpen: boolean = false;
+  @Input() selectedDemo: any;
+  // @Input() demoArr!: any[];
+  @Output() demoChange = new EventEmitter<any>();
+  @Output() closeModal: EventEmitter<void> = new EventEmitter<void>();
 
+
+  constructor(private cdr: ChangeDetectorRef) { }
+  demoArr = [
+    {
+      label:'Cybersecurity',
+      value: 'Cybersecurity',
+      class:'blue-btn',
+      checked: false
+    },
+    {
+      label:'Network Management',
+      value: 'Network Management',
+      class:'green-btn',
+      checked: false
+    },
+
+  ];
   ngOnInit(): void {
   }
+  modalOpen: boolean = false;
+  openModal() {
+    this.modalOpen = true; 
+    console.log(this.demoArr);
+  }
+  onDemoChange(event: any) {
+    this.selectedDemo = event;
+  }
 
+  updateChecked(selectedDemo: any) {
+    // Loop through demoArr to find the selected checkbox and toggle its state
+    this.demoArr.forEach(demo => {
+      if (demo.value === selectedDemo) {
+        demo.checked = !demo.checked; // Toggle the checkbox state
+      }
+    });
+  }
 }

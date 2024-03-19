@@ -3,13 +3,13 @@
         <div class="col-wraper-single">
             <div class="container" >
                 <div class="col-6">
-                    <h2 class="title">Using Configuration Management to Detect Unwanted Software</h2>
-                    <p>Lorem Ipsum do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <p class="bold-para">by Emily Coe </p>
+                    <h2 class="title">{{ blog.bigTitle }}</h2>
+                    <p>{{ blog.shortDesc }}</p>
+                    <p class="bold-para">{{ blog.author }}</p>
                 </div>
                 <div class="col-6">
                     <div class="img-wrap-col">
-                        <img src="../../../../../assets/imgs/blog-single.svg" alt="">
+                        <img [src]="'../../../../../assets/imgs/' + blog.imgBanner" alt="">
                     </div>
                 </div>
             </div>

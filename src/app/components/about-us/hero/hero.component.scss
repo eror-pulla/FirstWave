@@ -32,11 +32,13 @@
                     margin-bottom: 32px;
                 }
                 .wraper-btn{
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
                     .blue-btn{
 
                     }
                 }
-                
             }
             .col-6{
                 .img-wrap{

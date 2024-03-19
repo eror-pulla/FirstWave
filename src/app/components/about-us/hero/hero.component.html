@@ -7,6 +7,7 @@
                 <p class="para">We develop multi-award winning enterprise-class software that helps IT teams audit IT environments.</p>
                 <div class="wraper-btn">
                     <button class="blue-btn">Contact Us</button>
+                    <button class="green-btn" (click)="openModal()" >Book a demo</button>
                 </div>
             </div>
             <div class="col-6">
@@ -17,3 +18,8 @@
         </div>
     </div>
 </div>
+<app-modal  [isOpen]="modalOpen"
+(closeModal)="modalOpen = false"
+(demoChange)="onDemoChange($event)" 
+[selectedDemo]="selectedDemo" 
+[demoArr]="demoArr"></app-modal>
