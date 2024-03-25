@@ -17,7 +17,7 @@ export class HeroComponent implements OnInit {
   demoArr = [
     {
       label:'Cybersecurity',
-      value: 'Cybersecurity',
+      value: 'Cybersecurity', 
       class:'blue-btn',
       checked: false
     },

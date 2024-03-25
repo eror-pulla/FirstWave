@@ -1,0 +1,31 @@
+@import '../../../../styles.scss';
+
+.wraper-contact{
+    .inside-con{
+        .container{
+            display: flex;
+            align-items: center;
+            .col-6{
+                .text-wrap{
+                    .title{
+
+                    }
+                    .para{
+
+                    }
+                }
+            }
+            .col-6{
+                .form-con{
+                    .form-wraper{
+                        .form-group{
+                            .wrap{
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

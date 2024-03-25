@@ -1,0 +1,48 @@
+@import '../../../../styles.scss';
+.wraper-story{
+    .inside-story{
+        padding-top: 85px;
+        padding-bottom: 80px;
+        .container{
+            display: flex;
+            align-items: center;
+            margin-bottom: 48px;
+            .col-6{
+                .title{
+                    color: $label_col_primary;
+                    font-family: $Poppins_font_700;
+                    font-size: 40px;
+                    line-height: 48px;
+                    margin-bottom: 32px;
+                }
+                .para{
+                    color: $black_color;
+                    font-family: $Poppins_font_400;
+                    font-size: 20px;
+                    line-height: 32px;
+                }
+            }
+            .col-6{
+                .img-wraper{
+                    display: flex;
+                    justify-content: end;
+                    img{
+
+                    }
+                }
+            }
+        }
+        .container{
+            .wraper-content{
+                .content{
+                    color: $gray_color;
+                    font-family: $Poppins_font_400;
+                    font-size: 19px;
+                    line-height: 32px;
+                    line-break: auto;
+                    
+                }
+            }
+        }
+    }
+}

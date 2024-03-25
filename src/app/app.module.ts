@@ -33,6 +33,7 @@ import { ProductsComponent } from './components/about-us/products/products.compo
 import { OurStoryComponent } from './components/about-us/our-story/our-story.component';
 import { TeamComponent } from './components/about-us/team/team.component';
 import { ModalContactComponent } from './components/about-us/modal-contact/modal-contact.component';
+import { ContactComponent } from './components/about-us/contact/contact.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -65,7 +66,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ProductsComponent,
     OurStoryComponent,
     TeamComponent,
-    ModalContactComponent
+    ModalContactComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,47 @@
+@import '../../../../styles.scss';
+
+.team-wrap{
+    background: $bg_gray_color;
+    .inside-team{
+        padding-bottom: 80px;
+        padding-top: 80px;
+        .container{
+            .title{
+                text-align: center;
+                color: $label_col_primary;
+                font-family: $Poppins_font_700;
+                font-size: 40px;
+                line-height: 48px;
+                margin-bottom: 48px;
+            }
+            .wraper-people{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 48px;
+                place-items: center;
+                .person-wrap{
+                    a{
+                        text-align: center;
+                        text-decoration: none;
+                        img{
+                            margin-bottom: 24px;
+                        }
+                        .name{
+                            color: $black_color;
+                            font-family: $Poppins_font_700;
+                            font-size: 22px;
+                            line-height: 33px;
+                            margin-bottom: 0px;
+                        }
+                        .position{
+                            color: $black_color;
+                            font-family: $Poppins_font_400;
+                            font-size: 20px;
+                            line-height: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
