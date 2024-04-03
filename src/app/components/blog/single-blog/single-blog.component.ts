@@ -117,7 +117,7 @@ export class SingleBlogComponent implements OnInit {
     }
   ];
   currentCategory: string = 'Blogs';
-
+  
 
   constructor(private route: ActivatedRoute) { }
 
@@ -126,6 +126,7 @@ export class SingleBlogComponent implements OnInit {
       this.blogId = +params['id'];
       this.blog = this.blogs.find(blog => blog.id === this.blogId); 
   });
+
   }
   get filteredBlogs(): any[] {
     return this.blogs.filter(blog => blog.categories.includes(this.currentCategory));
