@@ -1,0 +1,20 @@
+@import '../../../../../styles.scss';
+ 
+.info-section{
+    .wraper-info{
+        .container{
+            padding-bottom: 2px;
+            .col-12{
+                .wraper-inside-info{
+                    margin-bottom: 42px;
+                    p{
+                        color: $gray_color;
+                        font-family: $Poppins_font_400;
+                        font-size: 20px;
+                        line-height: 32px;
+                    }
+                }
+            }
+        }
+    }
+}

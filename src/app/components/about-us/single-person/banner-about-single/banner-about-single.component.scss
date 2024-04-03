@@ -1,0 +1,56 @@
+@import '../../../../../styles.scss';
+
+.wraper-person{
+    height: calc(90vh - 96px);
+    .inside-person{
+        height: 100%;
+        display: flex;
+        .container{
+            display: flex;
+            align-items: center;
+            .col-6{
+                .img-wraper{
+                    img{
+                        width: 550px;
+                        height: 510px;
+                    }
+                }
+            }
+            .col-6{
+                .text-wraper{
+                    .title{
+                        color: $label_col_primary;
+                        font-family: $Poppins_font_700;
+                        font-size: 50px;
+                        line-height: 60px;
+                        margin-bottom: 24px;
+                    }
+                    .wraper-para{
+                        .desc{
+                            color: $gray_color;
+                            font-family: $Poppins_font_400;
+                            font-size: 20px;
+                            line-height: 32px;
+                        }
+                    }
+                    .socials-wraper{
+                        display: flex;
+                        align-items: center;
+                        gap: 24px;
+                        a{
+                            .wraper-social{
+                                padding: 15px;
+                                border: 1px solid $gray_color;
+                                border-radius: 50%;
+                                img{
+                                    height: 21px;
+                                    width: 23px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

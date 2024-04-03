@@ -34,9 +34,11 @@ import { OurStoryComponent } from './components/about-us/our-story/our-story.com
 import { TeamComponent } from './components/about-us/team/team.component';
 import { ModalContactComponent } from './components/about-us/modal-contact/modal-contact.component';
 import { ContactComponent } from './components/about-us/contact/contact.component';
+
 import { SinglePersonComponent } from './components/about-us/single-person/single-person.component';
 import { ContentComponent } from './components/about-us/single-person/content/content.component';
 import { QuoteComponent } from './components/about-us/single-person/quote/quote.component';
+import { BannerAboutSingleComponent } from './components/about-us/single-person/banner-about-single/banner-about-single.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -73,7 +75,9 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ContactComponent,
     SinglePersonComponent,
     ContentComponent,
-    QuoteComponent
+    QuoteComponent,
+    BannerAboutSingleComponent,
+    
   ],
   imports: [
     BrowserModule,
