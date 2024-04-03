@@ -1,0 +1,62 @@
+@import '../../../../../styles.scss';
+.wraper-quote{
+    height: 50vh;
+    background: $bg_gray_color;
+    .inside-quote{
+        height: 100%;
+        .container{
+            height: 100%;
+            .col-8{
+                height: 100%;
+                margin-right: auto;
+                margin-left: auto;
+                .inside-desc{
+                    position: relative;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    .wraper-text{
+                        position: relative;
+                        &::before{
+                            content: "";
+                            top: -25px;
+                            left: -50px;
+                            width: 71px;
+                            height: 60px;
+                            position: absolute;
+                            background-image: url(../../../../../assets/imgs/big_quotes.svg); 
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            z-index: 2;
+                            opacity: 30%;
+                        }
+                        .para{
+                            color: $gray_color;
+                            font-family: $Poppins_font_400;
+                            font-size: 20px;
+                            line-height: 32px;
+                            margin-bottom: 32px;
+                        }
+                    }
+                    .wraper-positon{
+                        .title{
+                            color: $primary_color;
+                            font-family: $manrope_font_700;
+                            font-size: 18px;
+                            line-height: 28px;
+
+                        }
+                        .job{
+                            color: $black_color;
+                            font-family: $manrope_font_400;
+                            font-size: 16px;
+                            line-height: 26px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
