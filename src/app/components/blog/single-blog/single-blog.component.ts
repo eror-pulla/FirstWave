@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-// import { Blog } from '../blog.component';
 
 @Component({
   selector: 'app-single-blog',
@@ -124,7 +123,7 @@ export class SingleBlogComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.blogId = +params['id']; // Extracting the id from the URL
+      this.blogId = +params['id'];
       this.blog = this.blogs.find(blog => blog.id === this.blogId); 
   });
   }

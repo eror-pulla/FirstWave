@@ -4,6 +4,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { SingleBlogComponent } from './components/blog/single-blog/single-blog.component';
+import { SinglePersonComponent } from './components/about-us/single-person/single-person.component';
 
 
 
@@ -19,6 +20,9 @@ const routes: Routes = [
   },
   {
     path:'about-us', component: AboutUsComponent
+  },
+  {
+    path:'about-us/person/:id', component: SinglePersonComponent
   }
 ];
 

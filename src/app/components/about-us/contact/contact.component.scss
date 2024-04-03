@@ -1,31 +1,196 @@
 @import '../../../../styles.scss';
 
 .wraper-contact{
+    height: 90vh;
     .inside-con{
+        height: 100%;
+        position: relative;
+        &::before{
+          content: "";
+          bottom: 75px;
+          left: 0;
+          width: 100%;
+          height: 250px;
+          position: absolute;
+          background: $secondary_color_1;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+        &::after{
+          content: "";
+          bottom: 100px;
+          left: 0;
+          width: 186px;
+          height: 186px;
+          position: absolute;
+          background-image: url(../../../../assets/imgs/big-circle.png); 
+          background-size: contain;
+          background-repeat: no-repeat;
+          // background-position: center;
+          z-index: 2;
+        }
         .container{
+            height: 100%;
             display: flex;
             align-items: center;
             .col-6{
                 .text-wrap{
+                    max-width: 90%;
                     .title{
-
+                        color: $label_col_primary;
+                        font-family: $Poppins_font_700;
+                        font-size: 50px;
+                        line-height: 60px;
+                        margin-bottom: 24px;
                     }
                     .para{
-
+                        color: $gray_color;
+                        font-family: $Poppins_font_400;
+                        font-size: 20px;
+                        line-height: 32px;
                     }
                 }
             }
             .col-6{
-                .form-con{
-                    .form-wraper{
-                        .form-group{
-                            .wrap{
-
-                            }
-                        }
-                    }
+              .wraper-forms{
+                position: relative;
+                &::before{
+                  content: "";
+                  top: -25px;
+                  left: 40px;
+                  width: 150px;
+                  height: 100px;
+                  position: absolute;
+                  background-image: url(../../../../assets/imgs/double-dots.svg);
+                  background-size: contain;
+                  background-repeat: no-repeat;
+                  background-position: center;
                 }
+                .wraper-con-form{
+                  position: relative;
+                  &::before{
+                    content: "";
+                    bottom: -60px;
+                    left: 25px;
+                    width: 114px;
+                    height: 114px;
+                    position: absolute;
+                    background-image: url(../../../../assets/imgs/lines-2.svg);
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                  }
+                  &::after{
+                    content: "";
+                    top: -40px;
+                    right: 20px;
+                    width: 186px;
+                    height: 186px;
+                    position: absolute;
+                    background-image: url(../../../../assets/imgs/blue-ball.svg);
+                    background-size: contain; 
+                    background-repeat: no-repeat;
+                    background-position: center;
+                  } 
+                  .form-con{
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      .form-wraper{
+                          padding: 32px;
+                          width: max-content;
+                          height: max-content;
+                          box-shadow: 7px 10px 32px -1px rgba(0,0,0,0.31);
+                          border-radius: 16px;
+                          background: $background;
+                          position: relative;
+                          z-index: 2;
+                          .form-group{
+                              display: flex;
+                              gap: 20px;
+                              margin-bottom: 16px;
+                              .wrap{
+                                  width: 100%;
+                                  input{
+                                      width: 100%;
+                                  }
+                                  label{
+                                      width: 100%;
+                                  }
+                              }
+                          }
+                      }
+                  }
+                }
+              }
             }
         }
     }
+}
+
+
+.alert{
+  margin-top: 10px;
+  margin-bottom: 0px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: red;
+}
+
+.modal{
+  .modal-content{
+    .data-submited{
+      font-family: 'Poppins Regular' , sans-serif;
+      font-size: 18px !important;
+    
+    }
+    .title-submited{
+      font-family: 'Poppins Bold' , sans-serif;
+      font-size: 24px !important;
+      margin-bottom: 20px !important;
+      font-weight: 700 !important;
+    
+    }
+  }
+}
+
+.toast{
+position: fixed;
+top: 20px;
+right: 20px;
+background-color: $accent_1;
+color: $background;
+font-family: $Poppins_font_400;
+font-size: 14px;
+padding: 15px;
+border-radius: 5px;
+animation: slideIn 0.5s ease-out forwards, fadeOut 0.5s 2.5s ease-out forwards;
+opacity: 0;
+z-index: 3;
+&.show {
+  opacity: 1;
+}
+&:not(.show) {
+  display: none;
+}
+}
+
+@keyframes slideIn {
+from {
+  transform: translateX(100%);
+}
+to {
+  transform: translateX(0);
+}
+}
+
+@keyframes fadeOut {
+from {
+  opacity: 1;
+}
+to {
+  opacity: 0;
+}
 }

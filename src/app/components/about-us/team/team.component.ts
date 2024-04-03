@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-team',
@@ -7,49 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamComponent implements OnInit {
 
+
+  @Input() members: any;
+
   constructor() { }
 
   ngOnInit(): void {
   }
-
-  members= [
-    { 
-      id: 1 ,
-      name: 'Michal Kosinski',
-      position: 'General Manager',
-      image: "member1.svg",
-    },
-    { 
-      id: 2 ,
-      name: 'Eror Ferizi',
-      position: 'Software Developer',
-      image: "member2.svg",
-    },
-    { 
-      id: 3 ,
-      name: 'Ardit Imeri',
-      position: 'UI/UX',
-      image: "member3.svg",
-    },
-    { 
-      id: 4 ,
-      name: 'Erion Hajdari',
-      position: '3D Design',
-      image: "member4.svg",
-    },
-    { 
-      id: 5 ,
-      name: 'Valdrin Sherifi',
-      position: 'Product Design',
-      image: "member5.svg",
-    },
-    { 
-      id: 6 ,
-      name: 'John Doe',
-      position: 'Project Manager',
-      image: "member6.svg",
-    },
-
-  ]
+  scrollToTop() {
+    window.scrollTo(0, 0);
+    
+  }
 
 }

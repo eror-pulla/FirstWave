@@ -4,7 +4,7 @@
             <h5 class="title">Meet Our Team Leaders</h5>
             <div class="wraper-people">
                 <div class="person-wrap" *ngFor="let member of members">
-                    <a href="">
+                    <a [routerLink]="['/about-us/person', member.id]" (click)="scrollToTop()">
                         <img [src]="'../../../../assets/imgs/' + member.image" alt="{{ member.name }}">
                         <h6 class="name">{{ member.name }}</h6>
                         <p class="position">{{ member.position }}</p>
