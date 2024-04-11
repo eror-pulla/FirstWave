@@ -17,7 +17,8 @@
             .wraper-people{
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
-                grid-gap: 48px;
+                row-gap: 48px;
+                column-gap: 149px;
                 place-items: center;
                 .person-wrap{
                     a{

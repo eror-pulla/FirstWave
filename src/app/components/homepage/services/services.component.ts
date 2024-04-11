@@ -10,13 +10,8 @@ export class ServicesComponent implements OnInit  {
   @Input() isOpen: boolean = false;
   @Output() closeModal: EventEmitter<void> = new EventEmitter<void>();
   @Input() selectedDemo: any;
-  // @Input() demoArr!: any[];
   @Output() demoChange = new EventEmitter<any>();
   services: { image: string, title: string, text: string }[] = [];
-
-  constructor(private cdr: ChangeDetectorRef) { 
-    this.populateServices();
-  }
   demoArr = [
     {
       label:'Cybersecurity',
@@ -31,9 +26,13 @@ export class ServicesComponent implements OnInit  {
       checked: false
     },
   ];
+  modalOpen: boolean = false;
+  constructor(private cdr: ChangeDetectorRef) { 
+    this.populateServices();
+  }
+
   ngOnInit(): void {
   }
-  modalOpen: boolean = false;
   openModal() {
     this.modalOpen = true; 
     console.log(this.demoArr);
@@ -45,7 +44,6 @@ export class ServicesComponent implements OnInit  {
     this.demoArr.forEach(demo => {
         demo.checked = (demo.value === selectedDemo);
     });
-    // this.updateButtonClass();
     this.cdr.detectChanges();
   }
   updateButtonClass() {
@@ -54,7 +52,6 @@ export class ServicesComponent implements OnInit  {
     this.selectedDemo = selectedDemoObj.value;
   }
   }
-  
   populateServices() {
     this.services.push(
       { image: "01.svg", title: "Web Security", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis et sed nam sem tellus erat." },

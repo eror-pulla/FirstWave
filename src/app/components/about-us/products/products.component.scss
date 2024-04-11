@@ -18,7 +18,8 @@
                 .grid-products{
                     display: grid;
                     grid-template-columns: repeat(3, 1fr);
-                    grid-gap: 30px;
+                    row-gap: 60px;
+                    column-gap: 30px;
                  .product{
                     align-items: center;
                     display: flex;

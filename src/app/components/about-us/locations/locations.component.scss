@@ -15,7 +15,8 @@
             .wraper-cards{
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
-                grid-gap: 45px; 
+                row-gap: 35px;
+                column-gap: 55px;
                 .cards{
                     background: $background;
                     border-radius: 16px 16px;
@@ -23,7 +24,7 @@
                         width:100%;
                     }
                     .title-card{
-                        text-align: center;
+                        padding-left: 4%;
                         margin-bottom: 12px;
                         margin-top: 16px;
                         color: $label_col_primary;

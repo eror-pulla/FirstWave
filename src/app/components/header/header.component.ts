@@ -9,12 +9,8 @@ import { ChangeDetectorRef } from '@angular/core';
 export class HeaderComponent implements OnInit {
   @Input() isOpen: boolean = false;
   @Input() selectedDemo: any;
-  // @Input() demoArr!: any[];
   @Output() demoChange = new EventEmitter<any>();
   @Output() closeModal: EventEmitter<void> = new EventEmitter<void>();
-
-
-  constructor(private cdr: ChangeDetectorRef) { }
   demoArr = [
     {
       label:'Cybersecurity',
@@ -30,6 +26,8 @@ export class HeaderComponent implements OnInit {
     },
 
   ];
+  constructor(private cdr: ChangeDetectorRef) { }
+
   ngOnInit(): void {
   }
   modalOpen: boolean = false;
@@ -42,10 +40,9 @@ export class HeaderComponent implements OnInit {
   }
 
   updateChecked(selectedDemo: any) {
-    // Loop through demoArr to find the selected checkbox and toggle its state
     this.demoArr.forEach(demo => {
       if (demo.value === selectedDemo) {
-        demo.checked = !demo.checked; // Toggle the checkbox state
+        demo.checked = !demo.checked; 
       }
     });
   }

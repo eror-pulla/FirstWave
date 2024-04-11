@@ -23,7 +23,6 @@ export class BlogSliderComponent implements OnInit {
       };
 
   @Input() blogs: Blog[] = []; 
-  // @Input() blog: any;
 
   currentCategory: string = 'Blogs';
 
@@ -53,10 +52,10 @@ export class BlogSliderComponent implements OnInit {
     window.scrollTo(0, 0);
     
   }
-
-  // filteredBlogs: Blog[] = [...this.blogs];
-  // filterByCategory(category: string) {
-  //   this.currentCategory = category;
-  //   this.filteredBlogs = this.blogs.filter(blog => blog.categories.includes(category));  
-  // }
+  removeCurrentBlog(currentIndex: number) {
+    if (currentIndex >= 0 && currentIndex < this.filteredBlogs.length) {
+      const removedBlog = this.filteredBlogs.splice(currentIndex, 1)[0];
+      console.log(`Removed blog with title: ${removedBlog.title}`);
+    }
+  }
 }

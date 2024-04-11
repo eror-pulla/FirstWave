@@ -116,22 +116,22 @@ export class SingleBlogComponent implements OnInit {
      
     }
   ];
+  filteredBlogs: any[] = [];
   currentCategory: string = 'Blogs';
   
-
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.blogId = +params['id'];
-      this.blog = this.blogs.find(blog => blog.id === this.blogId); 
+      // this.blog = this.blogs.find(blog => blog.id === this.blogId);
+      this.filteredBlogs = this.blogs.filter(blog => blog.id !== this.blogId);
+      this.blog = this.blogs.find(blog => blog.id === this.blogId);
   });
+  }
 
-  }
-  get filteredBlogs(): any[] {
-    return this.blogs.filter(blog => blog.categories.includes(this.currentCategory));
-  }
-  
+
+
 
 
 }

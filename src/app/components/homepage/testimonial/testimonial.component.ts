@@ -27,7 +27,6 @@ export class TestimonialComponent implements OnInit {
       el: '.swiper-pagination', 
       type:'bullets',
       clickable: true },
-    // scrollbar: { el: '.swiper-scrollbar', draggable: true },
   };
 
   onSlideChange() {

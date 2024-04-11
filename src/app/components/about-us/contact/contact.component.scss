@@ -157,24 +157,24 @@
 }
 
 .toast{
-position: fixed;
-top: 20px;
-right: 20px;
-background-color: $accent_1;
-color: $background;
-font-family: $Poppins_font_400;
-font-size: 14px;
-padding: 15px;
-border-radius: 5px;
-animation: slideIn 0.5s ease-out forwards, fadeOut 0.5s 2.5s ease-out forwards;
-opacity: 0;
-z-index: 3;
-&.show {
-  opacity: 1;
-}
-&:not(.show) {
-  display: none;
-}
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: $accent_1;
+  color: $background;
+  font-family: $Poppins_font_400;
+  font-size: 14px;
+  padding: 15px;
+  border-radius: 5px;
+  animation: slideIn 0.5s ease-out forwards, fadeOut 0.5s 2.5s ease-out forwards;
+  opacity: 0;
+  z-index: 3;
+  &.show {
+    opacity: 1;
+  }
+  &:not(.show) {
+    display: none;
+  }
 }
 
 @keyframes slideIn {

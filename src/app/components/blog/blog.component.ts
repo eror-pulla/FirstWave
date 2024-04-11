@@ -16,16 +16,14 @@ export interface Blog {
   styleUrls: ['./blog.component.scss']
 })
 export class BlogComponent implements OnInit {
-
+  modalOpen: boolean = false;
+  blogs: Blog[] = [];
+  currentCategory: string = 'Blogs';
   constructor() { }
 
   ngOnInit(): void {
     this.populateBlogs();
   }
-
-  modalOpen: boolean = false;
-  blogs: Blog[] = [];
-  currentCategory: string = 'Blogs';
   
   openModal() {
     this.modalOpen = true;

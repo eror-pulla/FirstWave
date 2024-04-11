@@ -14,7 +14,9 @@ export class ModalComponent {
   @Input() selectedDemo: any;
   @Input() demoArr!: any[];
   @Output() demoChange = new EventEmitter<any>();
-  
+  submittedData: any;
+  showingToast: boolean = false;
+
   constructor(private cdr: ChangeDetectorRef) {}
 
   form= new FormGroup({
@@ -64,9 +66,7 @@ export class ModalComponent {
     this.demoArr.forEach(demo => {
         demo.checked = (demo.value === selectedDemo);
     });
-    // Update button class based on the selected checkbox
     this.updateButtonClass();
-    // Trigger change detection manually
     this.cdr.detectChanges();
   }
   updateButtonClass() {
@@ -75,7 +75,6 @@ export class ModalComponent {
       this.selectedDemo = selectedDemoObj.value;
     }
   }
-  submittedData: any;
   onSubmit() {
     if (this.form.valid) {
       this.submittedData = this.form.value;
@@ -86,15 +85,12 @@ export class ModalComponent {
     }
   }
 
-showingToast: boolean = false;
 showToast() {
   this.showingToast = true;
   setTimeout(() => {
     this.showingToast = false;
-  }, 4000); // Hide the toast after 3 seconds
+  }, 4000); 
 }
-
-
 }
 
 

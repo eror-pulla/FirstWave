@@ -1,15 +1,17 @@
-import { Component, Input, Output, EventEmitter, HostListener, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, HostListener, OnInit, ViewEncapsulation } from '@angular/core';
 import { ChangeDetectorRef } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  styleUrls: ['./contact.component.scss'],
+
 })
 export class ContactComponent implements OnInit {
-
-  constructor() { }
+  submittedData: any;
+  showingToast: boolean = false;
+  constructor(private cdRef: ChangeDetectorRef) { }
 
   ngOnInit(): void {
   }
@@ -37,29 +39,27 @@ export class ContactComponent implements OnInit {
   get country(){
     return this.form.get('country');
   }
-  showingToast: boolean = false;
   showToast() {
     this.showingToast = true;
+    this.cdRef.detectChanges();
+    
+    // Force repaint
     setTimeout(() => {
-      this.showingToast = false;
-    }, 3000); 
+        this.showingToast = false;
+        this.cdRef.detectChanges();
+    }, 0);
   }
-
-  submittedData: any;
-  onCloseModalSubmitted1() {
-    this.submittedData = !this.submittedData;
-    this.form.reset();    
-  }
-
+  
   onSubmit() {
     if (this.form.valid) {
-      this.submittedData = this.form.value;
-      this.showToast(); 
+      // this.showToast(); 
       console.log('Form Submitted!', this.form.value);
       this.form.reset();    
-
     } else {
       console.log('Form is invalid');
     }
+  }
+  isFormEmptyOrInvalid(): boolean {
+    return this.form.invalid || this.form.pristine;
   }
 }

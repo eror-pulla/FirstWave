@@ -37,8 +37,6 @@ export class BlogBannerComponent implements OnInit {
 
   };
 
-
-
   onSlideChange2() {
     console.log('slide change');
   }

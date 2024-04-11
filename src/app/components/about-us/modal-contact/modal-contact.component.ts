@@ -1,5 +1,4 @@
 import { Component, Input, Output, EventEmitter, HostListener } from '@angular/core';
-import { ChangeDetectorRef } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -10,7 +9,12 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class ModalContactComponent{
   @Input() isOpen: boolean = false;
   @Output() closeModal: EventEmitter<void> = new EventEmitter<void>();
-  constructor(private cdr: ChangeDetectorRef) { }
+  modalOpen: boolean = false;
+  isOpen1: boolean = false;
+  submittedData: any;
+  showingToast: boolean = false;
+
+  constructor() { }
 
   form= new FormGroup({
     name: new FormControl('', Validators.required),
@@ -37,8 +41,7 @@ export class ModalContactComponent{
     return this.form.get('country');
   }
 
-  modalOpen: boolean = false;
-  isOpen1: boolean = false;
+
   openModal1() {
     this.modalOpen = true;
   }
@@ -56,7 +59,6 @@ export class ModalContactComponent{
   ngOnInit(): void {
   }
 
-  submittedData: any;
   onSubmit() {
     if (this.form.valid) {
       this.submittedData = this.form.value;
@@ -72,7 +74,7 @@ export class ModalContactComponent{
     this.isOpen = false;
     this.closeModal.emit();
   }
-  showingToast: boolean = false;
+
   showToast() {
     this.showingToast = true;
     setTimeout(() => {

@@ -6,15 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./banner.component.scss']
 })
 export class BannerComponent implements OnInit {
-
-  constructor() { 
-    
-  }
-
-  ngOnInit(): void {
-  }
-
   selectedDemo: any = 'Cybersecurity';
+  modalOpen: boolean = false;
   demoArr = [
     {
       label:'Cybersecurity',
@@ -31,16 +24,17 @@ export class BannerComponent implements OnInit {
 
   ];
 
+  constructor() { 
+  }
+
+  ngOnInit(): void {
+  }
   onDemoChange(event: any) {
     this.selectedDemo = event;
   }
-
-  modalOpen: boolean = false;
-  
   openModal() {
     this.modalOpen = true;
   }
-
   updateChecked(selectedDemo: any) {
     this.demoArr.forEach(demo => {
       if (demo.value === selectedDemo) {

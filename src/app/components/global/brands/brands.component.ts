@@ -9,7 +9,6 @@ export class BrandsComponent implements OnInit {
   url: string[] = [];  
   constructor() { }
   ngOnInit(): void {
-  // this.url.push();
   this.populateUrls();
   }
   populateUrls() {

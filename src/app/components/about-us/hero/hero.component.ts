@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, Output, EventEmitter  } from '@angular/core';
-import { ChangeDetectorRef } from '@angular/core';
 @Component({
   selector: 'app-hero',
   templateUrl: './hero.component.html',
@@ -9,11 +8,11 @@ export class HeroComponent implements OnInit {
 
   @Input() isOpen: boolean = false;
   @Input() selectedDemo: any;
-  @Output() demoChange = new EventEmitter<any>();
-  @Output() closeModal: EventEmitter<void> = new EventEmitter<void>();
   isOpen1: boolean = false;
+  modalOpen1: boolean = false;
+  modalOpen: boolean = false;
 
-  constructor(private cdr: ChangeDetectorRef) { }
+  constructor() { }
   demoArr = [
     {
       label:'Cybersecurity',
@@ -31,14 +30,9 @@ export class HeroComponent implements OnInit {
   ];
   ngOnInit(): void {
   }
-  modalOpen1: boolean = false;
   openModal1() {
     this.modalOpen1 = true;
   }
-  
-
-
-  modalOpen: boolean = false;
   openModal() {
     this.modalOpen = true; 
     console.log(this.demoArr);

@@ -10,10 +10,7 @@ export class AdvertComponent implements OnInit {
   @Input() isOpen: boolean = false;
   @Output() closeModal: EventEmitter<void> = new EventEmitter<void>();
   @Input() selectedDemo: any;
-  // @Input() demoArr!: any[];
   @Output() demoChange = new EventEmitter<any>();
-
-  constructor(private cdr: ChangeDetectorRef) { }
   demoArr = [
     {
       label:'Cybersecurity',
@@ -28,9 +25,12 @@ export class AdvertComponent implements OnInit {
       checked: false
     },
   ];
+  modalOpen: boolean = false;
+
+  constructor(private cdr: ChangeDetectorRef) { }
+
   ngOnInit(): void {
   }
-  modalOpen: boolean = false;
   openModal() {
     this.modalOpen = true; 
     console.log(this.demoArr);
@@ -42,7 +42,6 @@ export class AdvertComponent implements OnInit {
     this.demoArr.forEach(demo => {
         demo.checked = (demo.value === selectedDemo);
     });
-    // this.updateButtonClass();
     this.cdr.detectChanges();
   }
   updateButtonClass() {
@@ -51,6 +50,4 @@ export class AdvertComponent implements OnInit {
     this.selectedDemo = selectedDemoObj.value;
   }
   }
-
-
 }
